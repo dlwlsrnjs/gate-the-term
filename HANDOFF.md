@@ -21,3 +21,16 @@ python -u scripts/run_suite.py --gpu 0 --seeds 1 --arms split,cgh_strict,pivot_r
 ## 원래 큐 재개 주의
 
 원래 호스트의 `rebuttal_3213/remote_handoff.json`에 PID와 상태가 기록됨. 원격 담당 run을 취합하거나 큐에서 제외하기 전에 예전 큐를 재개하면 중복 실행함. PID는 재사용될 수 있으므로 명령 확인 없이 kill/signal 명령을 복사하지 말 것. 현재 자식 학습이 완료돼도 정지된 부모는 자동 표 갱신을 실행하지 않음. 결과를 확인해 원래 `export_latex.py`로 표를 갱신할 수 있음.
+
+## GPU 여유에 따른 추가 로컬 배정
+
+2026-09-20: GPU 1에 `component_zvp_s1_n100`을 추가로 시작했습니다. 원격 핵심 14개 배정은 유지합니다. **원격 추가 절제에서 component_zvp seed 1은 제외**하세요.
+
+```bash
+# entropy 대조실험의 남은 seeds만 원격 실행
+python -u scripts/run_suite.py --gpu 0 --seeds 2,3 --arms component_zvp --output outputs/controls
+# 나머지 추가 절제는 세 seeds 모두 원격 실행 가능
+python -u scripts/run_suite.py --gpu 0 --seeds 1,2,3 --arms q_resample,absolute,whole_gate,cgh_legacy,primary_reward,dynamic_correctness --output outputs/controls
+```
+
+이 추가 배정도 시작 상태이며 완료 성능 결과는 아닙니다. GPU 1 결과가 완료되면 원래 서버의 LaTeX 표를 갱신하도록 실행했습니다.
