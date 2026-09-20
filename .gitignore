@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+.cache/
+safecomp_audit/data/
+rebuttal_3213/runs/
+rebuttal_3213/smoke/
+rebuttal_3213/diagnostics/
+outputs/
+*.tar.gz
+scripts/model_path.txt
