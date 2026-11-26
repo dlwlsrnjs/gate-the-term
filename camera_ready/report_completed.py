@@ -181,7 +181,10 @@ def main():
         writer = csv.DictWriter(handle, fieldnames=["arm", "seed", "language", "semantic_id", "corr", "corr_raw", "lang"], lineterminator="\n")
         writer.writeheader()
         writer.writerows(observations)
-    progress = {"as_of_kst": timestamp, "local_deadline": state["deadline"], "completed_local": state["completed"],
+    progress = {"as_of_kst": timestamp, "local_state": state["state"],
+                "local_completed_kst": datetime.fromisoformat(state["updated_utc"]).astimezone(tz).isoformat(timespec="seconds")
+                    if state["state"] == "complete" else None,
+                "local_deadline": state["deadline"], "completed_local": state["completed"],
                 "active": workers, "pending_local": state["pending"], "failed": state["failed"],
                 "remote_fallback_jobs": state["remote_fallback_jobs"], "gpu_resources": state["gpu_resources"],
                 "forecast": forecasts, "remote_training_jobs": 9, "remote_external_evaluation_models": 19,
@@ -191,6 +194,8 @@ def main():
     lines = ["# 완료 실험 결과 — 잠정 분석", "", f"기준 시각: {timestamp}", "",
              "지정한 결과 폴더에서 확인한 fresh cohort의 완료 run만 포함합니다. 다른 서버 결과가 취합되지 않았다면 그 서버의 완료 여부는 미확인입니다. 단일 seed 관측은 방법의 최종 성능이나 세 seed 평균이 아닙니다.", "",
              "CGH와 pivot 직접학습의 상세 해석은 [직접 대조 분석](../CGH_PIVOT_KO.md)을 함께 확인합니다.", "",
+             *(["핵심 여섯 조건의 세 seed가 모두 완료됐습니다. [3-seed 평균·언어별 결과·crossed 구간](THREE_SEED_RESULTS_KO.md)을 확인합니다.", ""]
+               if all(report["method_three_seed_means"][arm] is not None for arm in protocol["primary"]) else []),
              "| 조건 | Seed | Bengali | Telugu | Thai | 전체 target 정확도 | Raw 정답 | Script 기준 통과 |",
              "|---|---:|---:|---:|---:|---:|---:|---:|"]
     for m in completed_metrics:
@@ -238,18 +243,25 @@ def main():
     (args.output / "RESULTS_KO.md").write_text("\n".join(lines))
     lines = ["# 실험 진행 현황", "", f"기준 시각: {timestamp}", "",
              f"로컬: 완료 {len(state['completed'])}/18, 실행 {len(workers)}, 대기 {len(state['pending'])}, 실패 {len(state['failed'])}.",
+             f"로컬 관리자 상태: {state['state']}." + (f" 전체 완료 시각: {progress['local_completed_kst']}." if progress['local_completed_kst'] else ""),
              f"로컬 마감: {state['deadline']}. 다른 환경 배정은 후순위 학습 9회와 확장 평가 19개 모델입니다.",
              "다른 환경의 실제 실행/완료 상태는 이 서버에서 확인하지 않았습니다.",
              "", "## 실행 중", "", "| 작업 | GPU | Step / 100 | 단계 | 평가 완료 언어 |", "|---|---:|---:|---|---|"]
     lines += [f"| {w['job']} | {w['gpu']} | {w['step']} | "
               + ("최종 평가" if w['phase'] == 'final_evaluation' else "학습")
               + " | " + (", ".join(w['evaluated_languages']) or "—") + " |" for w in workers]
+    if not workers:
+        lines += ["", "없음."]
     lines += ["", "## 완료", ""] + [f"- {tag}" for tag in state["completed"]]
     lines += ["", "## 대기 — 아직 로컬 예약", ""] + [f"- {tag}" for tag in state["pending"]]
+    if not state["pending"]:
+        lines += ["없음."]
     lines += ["", "## 추가 원격 이관으로 명시적으로 해제된 작업", ""]
     lines += [f"- {tag}" for tag in state["remote_fallback_jobs"]] or ["없음."]
     lines += ["", "## 완료 시각 추정", "", "| 작업 | 구분 | 예상 완료 KST |", "|---|---|---|"]
     lines += [f"| {f['job']} | {f['kind']} | {f['finish_kst']} |" for f in forecasts]
+    if state["state"] == "complete":
+        lines += ["", "로컬 18회는 모두 완료돼 남은 시간 추정이 필요하지 않습니다. 다른 환경 배정 완료를 뜻하지는 않습니다."]
     lines += ["", "예상은 최근 step 속도와 실제 완료 run의 후처리 시간에 따른 대기열 계산이며 보장 시각이 아닙니다. 18:05 이후 새 run을 시작하지 않고 22시에 이 실험의 로컬 작업을 종료하는 기존 설정을 유지합니다.",
               "", "이 문서는 게시 시점 스냅샷입니다. 실제 이관 시에는 원래 서버의 최신 live_handoff.json에서 remote_fallback_jobs를 확인하고 pending 작업과 중복 실행하지 않습니다.", ""]
     (args.output / "PROGRESS_KO.md").write_text("\n".join(lines))

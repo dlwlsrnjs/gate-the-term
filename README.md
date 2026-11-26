@@ -1,10 +1,6 @@
-> **Seed 2 확인:** [Seed 1·2 비교 및 완료 여부](camera_ready/results/latest/SEED_CONSISTENCY_KO.md). Strict·pivot seed 2 모두 최종 평가 완료. Strict는 두 seed 모두 68/180, pivot은 59→60/180입니다. Strict의 기준선 대비 +7.22 pp는 두 seed에서 반복됐습니다.
+> **로컬 핵심 18회 완료:** 2026-11-26 18:54 KST에 학습·최종 MGSM 평가 완료, 실패 0. [3-seed 평균·언어별 결과](camera_ready/results/latest/THREE_SEED_RESULTS_KO.md) · [진행](camera_ready/results/latest/PROGRESS_KO.md) · [리뷰 해석](camera_ready/results/REVIEWER_INTERPRETATION_KO.md). Strict 37.41%, GRPO 30.56%, pivot 31.85%. 다른 환경 배정인 학습 9회·확장 평가 19개 모델은 별도이며 이 서버에서는 완료 미확인입니다.
 
-> **완료 결과 업데이트:** 핵심 여섯 조건의 seed 1과 GRPO·split·strict·pivot seed 2, 총 10회 완료. [CGH·pivot 및 영어 정보 효과](camera_ready/results/CGH_PIVOT_KO.md) · [전체 잠정 수치](camera_ready/results/latest/RESULTS_KO.md) · [진행 상황](camera_ready/results/latest/PROGRESS_KO.md) · [리뷰 지적별 의미](camera_ready/results/REVIEWER_INTERPRETATION_KO.md). CGH·pivot 직접 비교는 두 seed이며 세 seed 평균은 보류합니다.
-
-> **오늘 22:00 KST 분담:** [로컬·원격 실행 계획](camera_ready/PLAN_2026-11-26.md) — 현재 서버는 핵심 학습, 다른 환경은 후순위 학습과 확장 평가를 맡습니다.
-
-> **Camera-ready package (2026-11):** 이번 추가실험·확장 평가와 다른 서버 인계는 **[camera_ready/README_KO.md](camera_ready/README_KO.md)** 를 사용하세요. 아래의 2026-09 rebuttal 안내는 이전 프로토콜입니다.
+> **Camera-ready package:** 설치·데이터·실행·결과 취합은 [camera_ready/README_KO.md](camera_ready/README_KO.md), 분담 기록은 [22시 실행 계획](camera_ready/PLAN_2026-11-26.md)을 사용합니다. 아래 초기 rebuttal 절차는 과거 프로토콜입니다.
 
 # Gate the Term: 다른 서버에서 추가 대조실험 실행하기
 

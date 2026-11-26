@@ -1,5 +1,5 @@
 {
-  "checked_utc": "2026-11-26T07:42:26+00:00",
+  "checked_utc": "2026-11-26T11:23:14+00:00",
   "frozen_data_restore": "passed",
   "exact_versions_and_source_checksums": "passed in source environment",
   "data_alignment_and_190_60_split": "passed",
@@ -11,8 +11,72 @@
   "public_pypi_versions": "all pinned non-Torch package versions found",
   "clean_machine_install": "installation script provided and syntax checked; no second full environment installed in this session",
   "source_handoff_inspection": "passed; source managers were NOT paused",
-  "fresh_full_training_outcomes": "Ten completed runs: all six primary arms seed 1, vanilla/split/strict/pivot seed 2. Three-seed means withheld.",
-  "deadline_parallel_scheduler": {
+  "fresh_full_training_outcomes": "All 18 local primary runs complete; all six primary three-seed means released. Secondary and external outcomes uncollected.",
+  "completed_result_audit": {
+    "passed": true,
+    "as_of_kst": "2026-11-26T20:23:14+09:00",
+    "complete_runs": 18,
+    "numeric_item_rows": 3240,
+    "semantic_ids": 60,
+    "matched_initialization": true,
+    "matched_prompt_stream": true,
+    "matched_protocol": true,
+    "per_seed_comparisons": 33,
+    "strict_s1_target": 68,
+    "pivot_rsft_s1_target": 59,
+    "vanilla_s1_target": 55,
+    "split_s1_target": 55,
+    "cgh_strict_nois_s1_target": 72,
+    "all_planned_three_seed_means_withheld": false,
+    "scope": "Per-seed intervals exclude seed uncertainty. Separate crossed report resamples three seeds and semantic IDs. Pure English-content effect not identified.",
+    "all_primary_three_seed_means_available": true,
+    "secondary_three_seed_means_withheld": true,
+    "three_seed_crossed_comparisons": 11
+  },
+  "seed_consistency_audit": {
+    "as_of_kst": "2026-11-26T20:23:14+09:00",
+    "seed2_final_results_present": {
+      "cgh_strict": true,
+      "pivot_rsft": true
+    },
+    "pivot_seed2_target_counts": {
+      "bn": 21,
+      "te": 16,
+      "th": 23,
+      "overall": 60
+    },
+    "strict_pivot_cross_seed_performance_comparison": "All three matched seed pairs complete. Strict exceeds both baselines in every seed; crossed strict-pivot interval includes zero.",
+    "complete_run_count": 18,
+    "numeric_item_rows": 3240,
+    "three_seed_means_withheld": false,
+    "strict_seed2_target_counts": {
+      "bn": 23,
+      "te": 3,
+      "th": 42,
+      "overall": 68
+    }
+  },
+  "three_seed_audit": {
+    "passed": true,
+    "primary_arms": 6,
+    "seeds": [
+      1,
+      2,
+      3
+    ],
+    "complete_runs": 18,
+    "semantic_ids": 60,
+    "numeric_item_rows": 3240,
+    "bootstrap": "Crossed resampling of seeds and semantic IDs, translations held together",
+    "replicates": 20000,
+    "rng_seed": 3213,
+    "no_multiplicity_adjustment": true,
+    "only_three_seeds": true,
+    "local_completed_kst": "2026-11-26T18:54:51+09:00",
+    "remote_execution_status_observed_here": false,
+    "independent_weighted_count_bootstrap_check": "passed for strict versus GRPO from original per-problem results"
+  },
+  "deadline_parallel_scheduler_initial_validation": {
     "active_jobs": 8,
     "adopted_existing_jobs": 2,
     "new_jobs": 6,
@@ -31,46 +95,5 @@
       }
     },
     "remote_fallback_guard": "Rejects all still-reserved local jobs; explicit released-job fixture passed."
-  },
-  "completed_result_audit": {
-    "passed": true,
-    "as_of_kst": "2026-11-26T16:42:26+09:00",
-    "complete_runs": 10,
-    "numeric_item_rows": 1800,
-    "semantic_ids": 60,
-    "matched_initialization": true,
-    "matched_prompt_stream": true,
-    "matched_protocol": true,
-    "per_seed_comparisons": 17,
-    "strict_s1_target": 68,
-    "pivot_rsft_s1_target": 59,
-    "vanilla_s1_target": 55,
-    "split_s1_target": 55,
-    "cgh_strict_nois_s1_target": 72,
-    "all_planned_three_seed_means_withheld": true,
-    "scope": "Exploratory per-seed semantic-cluster intervals; no training-seed uncertainty or multiplicity adjustment. Pure English-content effect not identified."
-  },
-  "seed_consistency_audit": {
-    "as_of_kst": "2026-11-26T16:42:26+09:00",
-    "seed2_final_results_present": {
-      "cgh_strict": true,
-      "pivot_rsft": true
-    },
-    "pivot_seed2_target_counts": {
-      "bn": 21,
-      "te": 16,
-      "th": 23,
-      "overall": 60
-    },
-    "strict_pivot_cross_seed_performance_comparison": "Both seed pairs complete. Strict baseline gain +7.22 pp repeats; strict-pivot superiority remains uncertain.",
-    "complete_run_count": 10,
-    "numeric_item_rows": 1800,
-    "three_seed_means_withheld": true,
-    "strict_seed2_target_counts": {
-      "bn": 23,
-      "te": 3,
-      "th": 42,
-      "overall": 68
-    }
   }
 }

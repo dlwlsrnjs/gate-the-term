@@ -1,5 +1,7 @@
 {
-  "as_of_kst": "2026-11-26T16:42:26+09:00",
+  "as_of_kst": "2026-11-26T20:23:14+09:00",
+  "local_state": "complete",
+  "local_completed_kst": "2026-11-26T18:54:51+09:00",
   "local_deadline": "2026-11-26T22:00:00+09:00",
   "completed_local": [
     "vanilla_s1_n100",
@@ -11,139 +13,33 @@
     "cgh_legacy_s1_n100",
     "cgh_strict_s1_n100",
     "pivot_rsft_s2_n100",
-    "cgh_strict_s2_n100"
+    "cgh_strict_s2_n100",
+    "pivot_rsft_s3_n100",
+    "cgh_legacy_s2_n100",
+    "cgh_strict_nois_s2_n100",
+    "split_s3_n100",
+    "cgh_strict_s3_n100",
+    "vanilla_s3_n100",
+    "cgh_legacy_s3_n100",
+    "cgh_strict_nois_s3_n100"
   ],
-  "active": [
-    {
-      "job": "cgh_legacy_s2_n100",
-      "gpu": 1,
-      "step": 75,
-      "phase": "training",
-      "evaluated_languages": [],
-      "recent_minutes_per_step": 1.8313432176907853,
-      "last_log_epoch": 1795678928.7231433
-    },
-    {
-      "job": "cgh_strict_nois_s2_n100",
-      "gpu": 1,
-      "step": 64,
-      "phase": "training",
-      "evaluated_languages": [],
-      "recent_minutes_per_step": 1.8008740186691283,
-      "last_log_epoch": 1795678923.7641757
-    },
-    {
-      "job": "vanilla_s3_n100",
-      "gpu": 0,
-      "step": 62,
-      "phase": "training",
-      "evaluated_languages": [],
-      "recent_minutes_per_step": 1.844772969086965,
-      "last_log_epoch": 1795678940.5854266
-    },
-    {
-      "job": "split_s3_n100",
-      "gpu": 1,
-      "step": 61,
-      "phase": "training",
-      "evaluated_languages": [],
-      "recent_minutes_per_step": 1.8683413525422423,
-      "last_log_epoch": 1795678873.8741815
-    },
-    {
-      "job": "cgh_strict_s3_n100",
-      "gpu": 0,
-      "step": 60,
-      "phase": "training",
-      "evaluated_languages": [],
-      "recent_minutes_per_step": 1.8690679772694907,
-      "last_log_epoch": 1795678841.904719
-    },
-    {
-      "job": "pivot_rsft_s3_n100",
-      "gpu": 0,
-      "step": 62,
-      "phase": "training",
-      "evaluated_languages": [],
-      "recent_minutes_per_step": 1.7339417461554205,
-      "last_log_epoch": 1795678867.2729223
-    },
-    {
-      "job": "cgh_legacy_s3_n100",
-      "gpu": 1,
-      "step": 14,
-      "phase": "training",
-      "evaluated_languages": [],
-      "recent_minutes_per_step": 1.8013440295060477,
-      "last_log_epoch": 1795678907.0085423
-    },
-    {
-      "job": "cgh_strict_nois_s3_n100",
-      "gpu": 0,
-      "step": 3,
-      "phase": "training",
-      "evaluated_languages": [],
-      "recent_minutes_per_step": null,
-      "last_log_epoch": 1795678866.5450478
-    }
-  ],
+  "active": [],
   "pending_local": [],
   "failed": {},
   "remote_fallback_jobs": [],
   "gpu_resources": {
     "0": {
-      "used_mib": 69478,
-      "free_mib": 11613,
-      "utilization": 100
+      "used_mib": 722,
+      "free_mib": 80369,
+      "utilization": 0
     },
     "1": {
-      "used_mib": 69376,
-      "free_mib": 11715,
-      "utilization": 100
+      "used_mib": 722,
+      "free_mib": 80369,
+      "utilization": 0
     }
   },
-  "forecast": [
-    {
-      "job": "cgh_legacy_s2_n100",
-      "finish_kst": "17:39",
-      "kind": "running"
-    },
-    {
-      "job": "cgh_strict_nois_s2_n100",
-      "finish_kst": "17:58",
-      "kind": "running"
-    },
-    {
-      "job": "vanilla_s3_n100",
-      "finish_kst": "18:04",
-      "kind": "running"
-    },
-    {
-      "job": "split_s3_n100",
-      "finish_kst": "18:06",
-      "kind": "running"
-    },
-    {
-      "job": "cgh_strict_s3_n100",
-      "finish_kst": "18:07",
-      "kind": "running"
-    },
-    {
-      "job": "pivot_rsft_s3_n100",
-      "finish_kst": "17:59",
-      "kind": "running"
-    },
-    {
-      "job": "cgh_legacy_s3_n100",
-      "finish_kst": "19:28",
-      "kind": "running"
-    },
-    {
-      "job": "cgh_strict_nois_s3_n100",
-      "finish_kst": "19:50",
-      "kind": "running"
-    }
-  ],
+  "forecast": [],
   "remote_training_jobs": 9,
   "remote_external_evaluation_models": 19,
   "remote_execution_status_observed_here": false,

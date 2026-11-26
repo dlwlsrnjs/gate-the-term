@@ -1,12 +1,10 @@
 # Camera-ready 추가실험: 설치, 데이터, 서버 인계, 결과 취합
 
-[Seed 1·2 비교 및 완료 여부](results/latest/SEED_CONSISTENCY_KO.md)를 갱신했습니다. Strict·pivot seed 2 모두 최종 평가 완료. Strict는 두 seed 모두 68/180, pivot은 59→60/180입니다. Strict의 기준선 대비 +7.22 pp는 두 seed에서 반복됐습니다.
-
-완료된 fresh run의 [잠정 결과](results/latest/RESULTS_KO.md), [진행 스냅샷](results/latest/PROGRESS_KO.md), [리뷰 지적별 해석](results/REVIEWER_INTERPRETATION_KO.md), [CGH·pivot 및 영어 정보 효과 분석](results/CGH_PIVOT_KO.md)을 공개합니다. 핵심 여섯 조건의 seed 1과 GRPO·split·strict·pivot seed 2, 총 10회 완료를 확인했습니다. CGH·pivot 직접 비교는 두 seed이며 세 seed가 모두 끝나지 않은 방법의 평균은 보류합니다.
+**로컬 핵심 18회가 2026-11-26 18:54 KST에 학습·최종 MGSM 평가까지 완료됐습니다.** 실패는 없습니다. [3-seed 결과](results/latest/THREE_SEED_RESULTS_KO.md), [전체 per-seed 수치](results/latest/RESULTS_KO.md), [진행](results/latest/PROGRESS_KO.md), [리뷰 해석](results/REVIEWER_INTERPRETATION_KO.md), [영어 정보 효과 분석](results/CGH_PIVOT_KO.md)을 확인합니다. 원격 후순위 학습 9회·확장 평가 19개 모델의 결과는 아직 여기서 취합·검증하지 않았습니다.
 
 이 문서가 2026-11 추가실험의 기준입니다. 저장소의 이전 `HANDOFF.md`와 50문제 평가 명령은 이전 rebuttal 기록입니다. 이번에는 **190개 학습 / 60개 MGSM holdout**, 핵심 6조건 × 3 seeds, 새 원문 2,069개에 대한 외부 평가를 사용합니다. 이전 논문의 숫자와 새 실행을 섞어 비교하지 않습니다.
 
-**이번 실제 분담은 [22:00 KST 마감 실행 계획](PLAN_2026-11-26.md)을 따릅니다.** 현재 서버는 GPU당 최대 네 run으로 핵심 18회 학습을 우선 처리하고, 다른 환경에는 후순위 9회와 확장 평가를 배정했습니다. 사전 분담된 원격 작업은 현재 서버를 정지할 필요 없이 시작할 수 있습니다. [SOURCE_STATUS.json](SOURCE_STATUS.json)은 게시 시점 스냅샷입니다. 아래 4절은 배정 밖의 작업까지 추가로 이전할 때 쓰는 일반 인계 절차입니다.
+**이번 실제 분담은 [22:00 KST 마감 실행 계획](PLAN_2026-11-26.md)을 따릅니다.** 현재 서버는 GPU당 최대 네 run으로 핵심 18회 학습을 완료했고, 다른 환경에는 후순위 9회와 확장 평가를 배정했습니다. 사전 분담된 원격 작업은 현재 서버를 정지할 필요 없이 시작할 수 있습니다. [SOURCE_STATUS.json](SOURCE_STATUS.json)은 게시 시점 스냅샷입니다. 아래 4절은 배정 밖의 작업까지 추가로 이전할 때 쓰는 일반 인계 절차입니다.
 
 ## 1. 필요한 환경
 
@@ -198,10 +196,12 @@ MGSM은 독립적인 원문 60개를 세 언어로 번역한 것이고, 외부 �
 
 ## 완료 결과와 seed 일관성 재집계
 
-다음 두 명령은 학습을 새로 실행하지 않습니다. 첫 명령은 완료 결과·진행을 같은 시각에 집계하고, 두 번째는 그 스냅샷의 seed 1·2 직접 대조를 생성합니다.
+다음 명령은 학습을 새로 실행하지 않습니다. 완료 결과·진행을 같은 시각에 집계한 뒤 seed 1·2 대조와 전체 3-seed 결과를 생성합니다.
 
 ```bash
 python camera_ready/report_completed.py --root /path/to/camera_ready_experiments/runs \
   --state /path/to/camera_ready_experiments/status.json --output camera_ready/results/latest
 python camera_ready/report_seed_consistency.py
+# 아래 집계는 여섯 핵심 조건의 세 seed가 모두 완료돼야 실행됩니다.
+python camera_ready/report_three_seed.py
 ```

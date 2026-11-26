@@ -1,16 +1,7 @@
 {
-  "captured_utc": "2026-11-26T07:42:26+00:00",
-  "training_state": "running",
-  "active_jobs": [
-    "cgh_legacy_s2_n100",
-    "cgh_strict_nois_s2_n100",
-    "vanilla_s3_n100",
-    "split_s3_n100",
-    "cgh_strict_s3_n100",
-    "pivot_rsft_s3_n100",
-    "cgh_legacy_s3_n100",
-    "cgh_strict_nois_s3_n100"
-  ],
+  "captured_utc": "2026-11-26T11:23:14+00:00",
+  "training_state": "complete",
+  "active_jobs": [],
   "completed_this_cohort": [
     "vanilla_s1_n100",
     "split_s1_n100",
@@ -21,9 +12,17 @@
     "cgh_legacy_s1_n100",
     "cgh_strict_s1_n100",
     "pivot_rsft_s2_n100",
-    "cgh_strict_s2_n100"
+    "cgh_strict_s2_n100",
+    "pivot_rsft_s3_n100",
+    "cgh_legacy_s2_n100",
+    "cgh_strict_nois_s2_n100",
+    "split_s3_n100",
+    "cgh_strict_s3_n100",
+    "vanilla_s3_n100",
+    "cgh_legacy_s3_n100",
+    "cgh_strict_nois_s3_n100"
   ],
-  "source_queue_is_active": true,
+  "source_queue_is_active": false,
   "remote_jobs_assigned": true,
   "note": "Snapshot only. Local primary jobs run until 22:00 KST. Remote owns secondary 9 plus external 19. Only live_handoff.json remote_fallback_jobs releases additional local jobs.",
   "local_deadline": "2026-11-26T22:00:00+09:00",
@@ -33,14 +32,14 @@
   },
   "gpu_resources": {
     "0": {
-      "used_mib": 69478,
-      "free_mib": 11613,
-      "utilization": 100
+      "used_mib": 722,
+      "free_mib": 80369,
+      "utilization": 0
     },
     "1": {
-      "used_mib": 69376,
-      "free_mib": 11715,
-      "utilization": 100
+      "used_mib": 722,
+      "free_mib": 80369,
+      "utilization": 0
     }
   },
   "allocation": "allocation_2026-11-26.json",
@@ -52,5 +51,8 @@
   "requested_seed2_completed": {
     "cgh_strict": true,
     "pivot_rsft": true
-  }
+  },
+  "local_completed_kst": "2026-11-26T18:54:51+09:00",
+  "gpu_resources_observed_utc": "2026-11-26T09:54:51.843580+00:00",
+  "latest_three_seed_report": "results/latest/THREE_SEED_RESULTS_KO.md"
 }
