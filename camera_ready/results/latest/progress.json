@@ -1,5 +1,5 @@
 {
-  "as_of_kst": "2026-11-26T15:31:03+09:00",
+  "as_of_kst": "2026-11-26T15:37:15+09:00",
   "local_deadline": "2026-11-26T22:00:00+09:00",
   "completed_local": [
     "vanilla_s1_n100",
@@ -15,58 +15,58 @@
     {
       "job": "cgh_strict_s2_n100",
       "gpu": 0,
-      "step": 71,
-      "recent_minutes_per_step": 1.808225530783335,
-      "last_log_epoch": 1795674660.159702
+      "step": 74,
+      "recent_minutes_per_step": 1.8326862128575627,
+      "last_log_epoch": 1795674986.049662
     },
     {
       "job": "pivot_rsft_s2_n100",
       "gpu": 1,
-      "step": 73,
-      "recent_minutes_per_step": 1.4229470964272821,
-      "last_log_epoch": 1795674646.3300152
+      "step": 77,
+      "recent_minutes_per_step": 1.2766797713438678,
+      "last_log_epoch": 1795674959.5856187
     },
     {
       "job": "cgh_legacy_s2_n100",
       "gpu": 1,
-      "step": 35,
-      "recent_minutes_per_step": 1.7515654309590658,
-      "last_log_epoch": 1795674604.9791868
+      "step": 38,
+      "recent_minutes_per_step": 1.7483994750181835,
+      "last_log_epoch": 1795674945.217183
     },
     {
       "job": "cgh_strict_nois_s2_n100",
       "gpu": 1,
-      "step": 23,
-      "recent_minutes_per_step": 1.7092322508494058,
-      "last_log_epoch": 1795674566.099348
+      "step": 27,
+      "recent_minutes_per_step": 1.775840653181076,
+      "last_log_epoch": 1795675018.447605
     },
     {
       "job": "vanilla_s3_n100",
       "gpu": 0,
-      "step": 23,
-      "recent_minutes_per_step": 1.7236437797546382,
-      "last_log_epoch": 1795674642.62915
+      "step": 26,
+      "recent_minutes_per_step": 1.7349819302558902,
+      "last_log_epoch": 1795674942.3060386
     },
     {
       "job": "split_s3_n100",
       "gpu": 1,
-      "step": 22,
-      "recent_minutes_per_step": 1.7347260713577266,
-      "last_log_epoch": 1795674597.524922
+      "step": 26,
+      "recent_minutes_per_step": 1.733241104284922,
+      "last_log_epoch": 1795674984.9236174
     },
     {
       "job": "cgh_strict_s3_n100",
       "gpu": 0,
-      "step": 22,
-      "recent_minutes_per_step": 1.795332104365031,
-      "last_log_epoch": 1795674655.6440556
+      "step": 25,
+      "recent_minutes_per_step": 1.69748943289121,
+      "last_log_epoch": 1795674918.1164744
     },
     {
       "job": "pivot_rsft_s3_n100",
       "gpu": 0,
-      "step": 22,
-      "recent_minutes_per_step": 1.73380929907163,
-      "last_log_epoch": 1795674655.6621766
+      "step": 26,
+      "recent_minutes_per_step": 1.6884048263231919,
+      "last_log_epoch": 1795675013.779025
     }
   ],
   "pending_local": [
@@ -90,55 +90,55 @@
   "forecast": [
     {
       "job": "cgh_strict_s2_n100",
-      "finish_kst": "16:35",
+      "finish_kst": "16:36",
       "kind": "running"
     },
     {
       "job": "pivot_rsft_s2_n100",
-      "finish_kst": "16:21",
+      "finish_kst": "16:17",
       "kind": "running"
     },
     {
       "job": "cgh_legacy_s2_n100",
-      "finish_kst": "17:35",
+      "finish_kst": "17:36",
       "kind": "running"
     },
     {
       "job": "cgh_strict_nois_s2_n100",
-      "finish_kst": "17:53",
-      "kind": "running"
-    },
-    {
-      "job": "vanilla_s3_n100",
-      "finish_kst": "17:55",
-      "kind": "running"
-    },
-    {
-      "job": "split_s3_n100",
-      "finish_kst": "17:57",
-      "kind": "running"
-    },
-    {
-      "job": "cgh_strict_s3_n100",
-      "finish_kst": "18:03",
-      "kind": "running"
-    },
-    {
-      "job": "pivot_rsft_s3_n100",
       "finish_kst": "17:58",
       "kind": "running"
     },
     {
+      "job": "vanilla_s3_n100",
+      "finish_kst": "17:56",
+      "kind": "running"
+    },
+    {
+      "job": "split_s3_n100",
+      "finish_kst": "17:56",
+      "kind": "running"
+    },
+    {
+      "job": "cgh_strict_s3_n100",
+      "finish_kst": "17:54",
+      "kind": "running"
+    },
+    {
+      "job": "pivot_rsft_s3_n100",
+      "finish_kst": "17:53",
+      "kind": "running"
+    },
+    {
       "job": "cgh_legacy_s3_n100",
-      "start_kst": "16:21",
-      "finish_kst": "19:29",
+      "start_kst": "16:17",
+      "finish_kst": "19:25",
       "kind": "queued",
       "admitted_before_cutoff_estimate": true
     },
     {
       "job": "cgh_strict_nois_s3_n100",
       "start_kst": "16:36",
-      "finish_kst": "19:43",
+      "finish_kst": "19:44",
       "kind": "queued",
       "admitted_before_cutoff_estimate": true
     }

@@ -1,5 +1,5 @@
 {
-  "captured_utc": "2026-11-26T06:31:03+00:00",
+  "captured_utc": "2026-11-26T06:37:15+00:00",
   "training_state": "running",
   "active_jobs": [
     "cgh_strict_s2_n100",
@@ -45,5 +45,10 @@
   "latest_results": "results/latest/RESULTS_KO.md",
   "latest_progress": "results/latest/PROGRESS_KO.md",
   "remote_execution_status_observed_here": false,
-  "latest_cgh_pivot_analysis": "results/CGH_PIVOT_KO.md"
+  "latest_cgh_pivot_analysis": "results/CGH_PIVOT_KO.md",
+  "latest_seed_consistency": "results/latest/SEED_CONSISTENCY_KO.md",
+  "requested_seed2_completed": {
+    "cgh_strict": false,
+    "pivot_rsft": false
+  }
 }

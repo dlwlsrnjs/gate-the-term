@@ -2,6 +2,8 @@
 
 분석 대상은 2026-11-26 fresh cohort의 **seed 1**입니다. `cgh_strict`와 `pivot_rsft`는 모두 100-step 학습과 최종 평가가 완료됐습니다. 여섯 핵심 조건의 seed 1 전체와 GRPO·split seed 2까지, 총 8회가 완료됐습니다. 전체 수치·진행은 [최신 결과](latest/RESULTS_KO.md)와 [진행 스냅샷](latest/PROGRESS_KO.md), 문항별 기록·출처는 [CSV](latest/completed_items.csv)와 [JSON](latest/completed_results.json)에 있습니다. 이 문서의 해석 범위를 이후 seed에 자동으로 확장하지 않습니다.
 
+**Seed 2 확인:** 아직 최종 평가가 완료되지 않아 seed 간 일관성은 보류합니다. 최신 step과 완료 예상은 [Seed 1·2 확인](latest/SEED_CONSISTENCY_KO.md)에 기록했습니다.
+
 ## 1. 동일 seed의 성능
 
 Target은 숫자 정답과 target script 기준을 함께 통과한 결과입니다. 세 언어는 동일한 **60개 원문 문제의 번역**이므로 180개 독립 문제로 세지 않습니다.

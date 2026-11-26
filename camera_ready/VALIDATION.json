@@ -1,5 +1,5 @@
 {
-  "checked_utc": "2026-11-26T06:31:03+00:00",
+  "checked_utc": "2026-11-26T06:37:15+00:00",
   "frozen_data_restore": "passed",
   "exact_versions_and_source_checksums": "passed in source environment",
   "data_alignment_and_190_60_split": "passed",
@@ -34,7 +34,7 @@
   },
   "completed_result_audit": {
     "passed": true,
-    "as_of_kst": "2026-11-26T15:31:03+09:00",
+    "as_of_kst": "2026-11-26T15:37:15+09:00",
     "complete_runs": 8,
     "numeric_item_rows": 1440,
     "semantic_ids": 60,
@@ -49,5 +49,21 @@
     "cgh_strict_nois_s1_target": 72,
     "all_planned_three_seed_means_withheld": true,
     "scope": "Exploratory per-seed semantic-cluster intervals; no training-seed uncertainty or multiplicity adjustment. Pure English-content effect not identified."
+  },
+  "seed_consistency_audit": {
+    "as_of_kst": "2026-11-26T15:37:15+09:00",
+    "requested_seed2_final_result_files_present": false,
+    "strict_seed2_step": 74,
+    "pivot_seed2_step": 77,
+    "strict_pivot_cross_seed_performance_comparison": "withheld; seed 2 final evaluations absent",
+    "baseline_split_seeds1_and2_target_counts": [
+      55,
+      55,
+      55,
+      55
+    ],
+    "complete_run_count": 8,
+    "numeric_item_rows": 1440,
+    "three_seed_means_withheld": true
   }
 }

@@ -1,5 +1,5 @@
 {
-  "as_of_kst": "2026-11-26T15:31:03+09:00",
+  "as_of_kst": "2026-11-26T15:37:15+09:00",
   "scope": "PROVISIONAL completed fresh runs only; smoke and historical results excluded.",
   "coverage": "Only result files present in the supplied root. Uncollected other-host runs are unobserved, not failures.",
   "analysis_source_sha256": "cfdadd41c21e46057dddf56cc8f24f69e47b30d9cd32e2677f456af6e488f0bb",
