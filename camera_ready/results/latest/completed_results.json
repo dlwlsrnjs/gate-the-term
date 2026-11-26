@@ -1,0 +1,316 @@
+{
+  "as_of_kst": "2026-11-26T14:02:02+09:00",
+  "scope": "PROVISIONAL completed fresh runs only; smoke and historical results excluded.",
+  "coverage": "Only result files present in the supplied root. Uncollected other-host runs are unobserved, not failures.",
+  "analysis_source_sha256": "b5d9ce7c6f645ec60d73da80159135d789cc771f113dd9d47d6a3aa08b5468fb",
+  "analysis_numpy_version": "2.4.6",
+  "planned_seeds": [
+    1,
+    2,
+    3
+  ],
+  "completed_runs": [
+    {
+      "tag": "split_s1_n100",
+      "arm": "split",
+      "seed": 1,
+      "overall": {
+        "n": 180,
+        "corr": 55,
+        "corr_raw": 57,
+        "lang": 178
+      },
+      "by_language": {
+        "bn": {
+          "n": 60,
+          "corr": 15,
+          "corr_raw": 15,
+          "lang": 60
+        },
+        "te": {
+          "n": 60,
+          "corr": 1,
+          "corr_raw": 1,
+          "lang": 60
+        },
+        "th": {
+          "n": 60,
+          "corr": 39,
+          "corr_raw": 41,
+          "lang": 58
+        }
+      },
+      "training_groups": {
+        "n": 200,
+        "target_degenerate": 136,
+        "all_wrong": 123,
+        "scalar_zero": 0
+      },
+      "generated_tokens": 330358,
+      "prompt_tokens": 372206,
+      "elapsed_s": 9257.368353128433
+    },
+    {
+      "tag": "vanilla_s1_n100",
+      "arm": "vanilla",
+      "seed": 1,
+      "overall": {
+        "n": 180,
+        "corr": 55,
+        "corr_raw": 55,
+        "lang": 179
+      },
+      "by_language": {
+        "bn": {
+          "n": 60,
+          "corr": 15,
+          "corr_raw": 15,
+          "lang": 60
+        },
+        "te": {
+          "n": 60,
+          "corr": 3,
+          "corr_raw": 3,
+          "lang": 60
+        },
+        "th": {
+          "n": 60,
+          "corr": 37,
+          "corr_raw": 37,
+          "lang": 59
+        }
+      },
+      "training_groups": {
+        "n": 200,
+        "target_degenerate": 146,
+        "all_wrong": 134,
+        "scalar_zero": 0
+      },
+      "generated_tokens": 327322,
+      "prompt_tokens": 372206,
+      "elapsed_s": 8907.337182044983
+    }
+  ],
+  "per_seed_comparisons": [
+    {
+      "baseline": "vanilla",
+      "arm": "split",
+      "seed": 1,
+      "delta_pp": 0.0,
+      "conditional_semantic_cluster_95ci_pp": [
+        -4.444444444444445,
+        5.0
+      ],
+      "bootstrap_replicates": 20000,
+      "bootstrap_rng_seed": 3213,
+      "scope": "One fixed seed/model pair; selected languages fixed; training-seed uncertainty NOT included.",
+      "paired_by_language": {
+        "bn": {
+          "fixed_ids": [
+            52,
+            163,
+            235
+          ],
+          "broken_ids": [
+            72,
+            84,
+            180
+          ],
+          "delta_pp": 0.0
+        },
+        "te": {
+          "fixed_ids": [],
+          "broken_ids": [
+            23,
+            158
+          ],
+          "delta_pp": -3.3333333333333335
+        },
+        "th": {
+          "fixed_ids": [
+            35,
+            66,
+            77,
+            143,
+            235
+          ],
+          "broken_ids": [
+            37,
+            52,
+            84
+          ],
+          "delta_pp": 3.3333333333333335
+        }
+      }
+    }
+  ],
+  "method_three_seed_means": {
+    "vanilla": null,
+    "split": null,
+    "cgh_strict": null,
+    "pivot_rsft": null,
+    "cgh_legacy": null,
+    "cgh_strict_nois": null,
+    "whole_gate": null,
+    "q_resample": null,
+    "component_zvp": null
+  },
+  "sources": [
+    {
+      "tag": "vanilla_s1_n100",
+      "result_sha256": "9a3d0162430fbf7b12d210f97c17ff65bf6c585de7cf9a8784b4c224d32a1565",
+      "config_sha256": "1537af0794466f684a3768ed19561fabfdf3631f0076d0b2bb953ec161fe9d8e",
+      "train_log_sha256": "d29e196e3f0b447716aa9ad0ba983d1438c97fb3a393bf651325f63d0a73f4c8",
+      "initial_lora_sha256": "7df9971763a3d91debf1ec1517f0a01ea498bc150aef80f3b755b52d6b355e8a",
+      "engine_sha256": "493b69133f2d395b2f9aa7bfe06575ae875a6670445b49e9162b92d150694f68",
+      "coefficients_sha256": "dae3fdf40ba83f6ccafa4507edd69dd5f852793e0d5d3ec947f38812cdcdf301",
+      "model_revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+      "versions": {
+        "torch": "2.5.1+cu121",
+        "transformers": "5.15.1",
+        "peft": "0.14.0"
+      },
+      "eval_ids": [
+        181,
+        102,
+        184,
+        23,
+        3,
+        140,
+        15,
+        243,
+        133,
+        113,
+        239,
+        141,
+        52,
+        163,
+        156,
+        80,
+        111,
+        90,
+        215,
+        143,
+        120,
+        84,
+        175,
+        18,
+        186,
+        25,
+        79,
+        37,
+        154,
+        207,
+        180,
+        136,
+        64,
+        204,
+        158,
+        24,
+        193,
+        229,
+        72,
+        35,
+        129,
+        55,
+        228,
+        149,
+        91,
+        122,
+        77,
+        212,
+        200,
+        235,
+        103,
+        124,
+        130,
+        66,
+        10,
+        107,
+        227,
+        194,
+        98,
+        216
+      ],
+      "training_steps": 100
+    },
+    {
+      "tag": "split_s1_n100",
+      "result_sha256": "12197f5bd973436f6d69d110dd75b6ef6985f8d47c832ad9f5a5ec4b5905ce0d",
+      "config_sha256": "93477ddcedc95ade0b4fc04c8c1f43e8059873d5e33d1a16e7ccf7e343069f4f",
+      "train_log_sha256": "5c652108b95ccde2242c2efccde2022e8fc0eea7e8cdf626c97805c050a8d950",
+      "initial_lora_sha256": "7df9971763a3d91debf1ec1517f0a01ea498bc150aef80f3b755b52d6b355e8a",
+      "engine_sha256": "493b69133f2d395b2f9aa7bfe06575ae875a6670445b49e9162b92d150694f68",
+      "coefficients_sha256": "dae3fdf40ba83f6ccafa4507edd69dd5f852793e0d5d3ec947f38812cdcdf301",
+      "model_revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+      "versions": {
+        "torch": "2.5.1+cu121",
+        "transformers": "5.15.1",
+        "peft": "0.14.0"
+      },
+      "eval_ids": [
+        181,
+        102,
+        184,
+        23,
+        3,
+        140,
+        15,
+        243,
+        133,
+        113,
+        239,
+        141,
+        52,
+        163,
+        156,
+        80,
+        111,
+        90,
+        215,
+        143,
+        120,
+        84,
+        175,
+        18,
+        186,
+        25,
+        79,
+        37,
+        154,
+        207,
+        180,
+        136,
+        64,
+        204,
+        158,
+        24,
+        193,
+        229,
+        72,
+        35,
+        129,
+        55,
+        228,
+        149,
+        91,
+        122,
+        77,
+        212,
+        200,
+        235,
+        103,
+        124,
+        130,
+        66,
+        10,
+        107,
+        227,
+        194,
+        98,
+        216
+      ],
+      "training_steps": 100
+    }
+  ]
+}

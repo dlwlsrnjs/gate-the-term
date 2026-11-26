@@ -11,7 +11,7 @@
   "public_pypi_versions": "all pinned non-Torch package versions found",
   "clean_machine_install": "installation script provided and syntax checked; no second full environment installed in this session",
   "source_handoff_inspection": "passed; source managers were NOT paused",
-  "fresh_full_training_outcomes": "pending; no accuracy claimed",
+  "fresh_full_training_outcomes": "Two complete seed-1 controls published provisionally; all three-seed method means withheld.",
   "deadline_parallel_scheduler": {
     "active_jobs": 8,
     "adopted_existing_jobs": 2,
@@ -31,5 +31,18 @@
       }
     },
     "remote_fallback_guard": "Rejects all still-reserved local jobs; explicit released-job fixture passed."
+  },
+  "completed_result_audit": {
+    "passed": true,
+    "complete_runs": 2,
+    "numeric_item_rows": 360,
+    "semantic_ids": 60,
+    "matched_initialization": true,
+    "matched_prompt_stream": true,
+    "matched_protocol": true,
+    "same_target_correct_count": 55,
+    "paired_fixes": 8,
+    "paired_breaks": 8,
+    "scope": "Single-seed observations; conditional problem-cluster interval only."
   }
 }

@@ -1,6 +1,6 @@
 # Camera-ready integration and claim limits
 
-This package supplies new controlled experiments. It does not contain completed outcomes for the fresh 100-step cohort. Source-host smoke/timing outputs are functionality checks, not additional accuracy results.
+This package supplies new controlled experiments. Provisional completed-run outcomes are now available in [results/latest/RESULTS_KO.md](results/latest/RESULTS_KO.md), with per-item numeric records and source checksums. At the first published result snapshot, only scalar GRPO and separated normalization, seed 1, had completed on the source host. Full method-level seed means remain withheld until all three planned seeds are present. Source-host smoke/timing outputs remain functionality checks, not additional accuracy results.
 
 ## Main claims
 
