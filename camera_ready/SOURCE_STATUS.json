@@ -1,5 +1,5 @@
 {
-  "captured_utc": "2026-11-26T06:37:15+00:00",
+  "captured_utc": "2026-11-26T06:59:56+00:00",
   "training_state": "running",
   "active_jobs": [
     "cgh_strict_s2_n100",
@@ -31,13 +31,13 @@
   },
   "gpu_resources": {
     "0": {
-      "used_mib": 69216,
-      "free_mib": 11875,
+      "used_mib": 69496,
+      "free_mib": 11595,
       "utilization": 100
     },
     "1": {
-      "used_mib": 69332,
-      "free_mib": 11759,
+      "used_mib": 69454,
+      "free_mib": 11637,
       "utilization": 100
     }
   },
