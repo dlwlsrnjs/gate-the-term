@@ -1,5 +1,5 @@
 {
-  "checked_utc": "2026-11-26T06:59:56+00:00",
+  "checked_utc": "2026-11-26T07:17:00+00:00",
   "frozen_data_restore": "passed",
   "exact_versions_and_source_checksums": "passed in source environment",
   "data_alignment_and_190_60_split": "passed",
@@ -11,7 +11,7 @@
   "public_pypi_versions": "all pinned non-Torch package versions found",
   "clean_machine_install": "installation script provided and syntax checked; no second full environment installed in this session",
   "source_handoff_inspection": "passed; source managers were NOT paused",
-  "fresh_full_training_outcomes": "Eight completed runs: all six primary arms seed 1; vanilla and split seed 2. Three-seed means withheld.",
+  "fresh_full_training_outcomes": "Nine completed runs: all primary arms seed 1, vanilla/split/pivot seed 2. All three-seed means withheld.",
   "deadline_parallel_scheduler": {
     "active_jobs": 8,
     "adopted_existing_jobs": 2,
@@ -34,14 +34,14 @@
   },
   "completed_result_audit": {
     "passed": true,
-    "as_of_kst": "2026-11-26T15:59:56+09:00",
-    "complete_runs": 8,
-    "numeric_item_rows": 1440,
+    "as_of_kst": "2026-11-26T16:17:00+09:00",
+    "complete_runs": 9,
+    "numeric_item_rows": 1620,
     "semantic_ids": 60,
     "matched_initialization": true,
     "matched_prompt_stream": true,
     "matched_protocol": true,
-    "per_seed_comparisons": 12,
+    "per_seed_comparisons": 14,
     "strict_s1_target": 68,
     "pivot_rsft_s1_target": 59,
     "vanilla_s1_target": 55,
@@ -51,19 +51,20 @@
     "scope": "Exploratory per-seed semantic-cluster intervals; no training-seed uncertainty or multiplicity adjustment. Pure English-content effect not identified."
   },
   "seed_consistency_audit": {
-    "as_of_kst": "2026-11-26T15:59:56+09:00",
-    "requested_seed2_final_result_files_present": false,
-    "strict_seed2_step": 86,
-    "pivot_seed2_step": 95,
-    "strict_pivot_cross_seed_performance_comparison": "withheld; seed 2 final evaluations absent",
-    "baseline_split_seeds1_and2_target_counts": [
-      55,
-      55,
-      55,
-      55
-    ],
-    "complete_run_count": 8,
-    "numeric_item_rows": 1440,
+    "as_of_kst": "2026-11-26T16:17:00+09:00",
+    "seed2_final_results_present": {
+      "cgh_strict": false,
+      "pivot_rsft": true
+    },
+    "pivot_seed2_target_counts": {
+      "bn": 21,
+      "te": 16,
+      "th": 23,
+      "overall": 60
+    },
+    "strict_pivot_cross_seed_performance_comparison": "strict seed 2 withheld; pivot baseline comparisons available for seeds 1 and 2",
+    "complete_run_count": 9,
+    "numeric_item_rows": 1620,
     "three_seed_means_withheld": true
   }
 }

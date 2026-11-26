@@ -1,8 +1,8 @@
 {
-  "as_of_kst": "2026-11-26T15:59:56+09:00",
+  "as_of_kst": "2026-11-26T16:17:00+09:00",
   "scope": "PROVISIONAL completed fresh runs only; smoke and historical results excluded.",
   "coverage": "Only result files present in the supplied root. Uncollected other-host runs are unobserved, not failures.",
-  "analysis_source_sha256": "cfdadd41c21e46057dddf56cc8f24f69e47b30d9cd32e2677f456af6e488f0bb",
+  "analysis_source_sha256": "98a492ab546eea01f16bfbafc2e59a30877dcd7aa2412e023df51e862e8548bd",
   "analysis_numpy_version": "2.4.6",
   "planned_seeds": [
     1,
@@ -353,6 +353,49 @@
       "generated_tokens": 319382,
       "prompt_tokens": 364942,
       "elapsed_s": 11406.569412231445
+    },
+    {
+      "tag": "pivot_rsft_s2_n100",
+      "arm": "pivot_rsft",
+      "seed": 2,
+      "overall": {
+        "n": 180,
+        "corr": 60,
+        "corr_raw": 60,
+        "lang": 180
+      },
+      "by_language": {
+        "bn": {
+          "n": 60,
+          "corr": 21,
+          "corr_raw": 21,
+          "lang": 60
+        },
+        "te": {
+          "n": 60,
+          "corr": 16,
+          "corr_raw": 16,
+          "lang": 60
+        },
+        "th": {
+          "n": 60,
+          "corr": 23,
+          "corr_raw": 23,
+          "lang": 60
+        }
+      },
+      "training_groups": {
+        "n": 200,
+        "target_degenerate": 129,
+        "all_wrong": 115,
+        "scalar_zero": 0,
+        "admitted_extras": 118,
+        "generated_positive_extras": 118,
+        "admission_type": "positive-only"
+      },
+      "generated_tokens": 268042,
+      "prompt_tokens": 364942,
+      "elapsed_s": 9888.587609767914
     }
   ],
   "per_seed_comparisons": [
@@ -1201,6 +1244,183 @@
           "delta_pp": 6.666666666666667
         }
       }
+    },
+    {
+      "baseline": "vanilla",
+      "arm": "pivot_rsft",
+      "seed": 2,
+      "delta_pp": 2.7777777777777777,
+      "conditional_semantic_cluster_95ci_pp": [
+        -4.444444444444445,
+        10.0
+      ],
+      "bootstrap_replicates": 20000,
+      "bootstrap_rng_seed": 3213,
+      "scope": "Exploratory fixed-seed/model pair; selected languages fixed; training-seed uncertainty NOT included; intervals not multiplicity-adjusted.",
+      "paired_by_language": {
+        "bn": {
+          "fixed_ids": [
+            15,
+            52,
+            90,
+            91,
+            103,
+            130,
+            133,
+            200,
+            216,
+            243
+          ],
+          "broken_ids": [
+            24,
+            35,
+            72,
+            98,
+            136,
+            156,
+            229
+          ],
+          "delta_pp": 5.0
+        },
+        "te": {
+          "fixed_ids": [
+            24,
+            25,
+            55,
+            79,
+            80,
+            84,
+            90,
+            113,
+            120,
+            140,
+            158,
+            180,
+            194,
+            200,
+            204
+          ],
+          "broken_ids": [
+            98
+          ],
+          "delta_pp": 23.333333333333332
+        },
+        "th": {
+          "fixed_ids": [
+            129,
+            141,
+            228
+          ],
+          "broken_ids": [
+            64,
+            66,
+            72,
+            79,
+            84,
+            120,
+            133,
+            136,
+            140,
+            149,
+            158,
+            163,
+            212,
+            215,
+            216
+          ],
+          "delta_pp": -20.0
+        }
+      }
+    },
+    {
+      "baseline": "split",
+      "arm": "pivot_rsft",
+      "seed": 2,
+      "delta_pp": 2.7777777777777777,
+      "conditional_semantic_cluster_95ci_pp": [
+        -4.444444444444444,
+        10.0
+      ],
+      "bootstrap_replicates": 20000,
+      "bootstrap_rng_seed": 3213,
+      "scope": "Exploratory fixed-seed/model pair; selected languages fixed; training-seed uncertainty NOT included; intervals not multiplicity-adjusted.",
+      "paired_by_language": {
+        "bn": {
+          "fixed_ids": [
+            15,
+            52,
+            90,
+            91,
+            103,
+            130,
+            133,
+            180,
+            200,
+            215,
+            216,
+            243
+          ],
+          "broken_ids": [
+            24,
+            35,
+            72,
+            136,
+            149,
+            235
+          ],
+          "delta_pp": 10.0
+        },
+        "te": {
+          "fixed_ids": [
+            24,
+            25,
+            55,
+            79,
+            80,
+            84,
+            90,
+            113,
+            120,
+            140,
+            158,
+            180,
+            194,
+            200,
+            204
+          ],
+          "broken_ids": [],
+          "delta_pp": 25.0
+        },
+        "th": {
+          "fixed_ids": [
+            129,
+            141,
+            228
+          ],
+          "broken_ids": [
+            18,
+            64,
+            66,
+            72,
+            77,
+            79,
+            120,
+            133,
+            136,
+            140,
+            158,
+            163,
+            181,
+            204,
+            212,
+            215,
+            216,
+            227,
+            243
+          ],
+          "delta_pp": -26.666666666666668
+        }
+      }
     }
   ],
   "method_three_seed_means": {
@@ -1766,6 +1986,84 @@
       "result_sha256": "5cead65b0dc715af0a3567624d517fd33451b9e80bd1daada45a27405d8c0924",
       "config_sha256": "6a1bd88f36d84af3f3ae202499ab798db0cebbaf921a4432a6835779de79b67a",
       "train_log_sha256": "1badca6328b9a31772c185f767fb0a5bdec64e319d8ce1130cd26df2139d23f2",
+      "initial_lora_sha256": "dd75bc8b662e2fe07308afebc0b71b3233c827b7fffda0c759824ad215ec258d",
+      "engine_sha256": "493b69133f2d395b2f9aa7bfe06575ae875a6670445b49e9162b92d150694f68",
+      "coefficients_sha256": "dae3fdf40ba83f6ccafa4507edd69dd5f852793e0d5d3ec947f38812cdcdf301",
+      "model_revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+      "versions": {
+        "torch": "2.5.1+cu121",
+        "transformers": "5.15.1",
+        "peft": "0.14.0"
+      },
+      "eval_ids": [
+        181,
+        102,
+        184,
+        23,
+        3,
+        140,
+        15,
+        243,
+        133,
+        113,
+        239,
+        141,
+        52,
+        163,
+        156,
+        80,
+        111,
+        90,
+        215,
+        143,
+        120,
+        84,
+        175,
+        18,
+        186,
+        25,
+        79,
+        37,
+        154,
+        207,
+        180,
+        136,
+        64,
+        204,
+        158,
+        24,
+        193,
+        229,
+        72,
+        35,
+        129,
+        55,
+        228,
+        149,
+        91,
+        122,
+        77,
+        212,
+        200,
+        235,
+        103,
+        124,
+        130,
+        66,
+        10,
+        107,
+        227,
+        194,
+        98,
+        216
+      ],
+      "training_steps": 100
+    },
+    {
+      "tag": "pivot_rsft_s2_n100",
+      "result_sha256": "90dc6cdb5c39cd0d479e4a075fe8d2a6c13a728fa00a54e57430f7e3d0cfef27",
+      "config_sha256": "932eb9ff6fb03a4525c32cf608dddbd31202cdc8aa270486fcf400d8191cee15",
+      "train_log_sha256": "e23b2d5acd569e92a9a946a2db39f80280e80e10ec5d50eedc78d49c24df5f19",
       "initial_lora_sha256": "dd75bc8b662e2fe07308afebc0b71b3233c827b7fffda0c759824ad215ec258d",
       "engine_sha256": "493b69133f2d395b2f9aa7bfe06575ae875a6670445b49e9162b92d150694f68",
       "coefficients_sha256": "dae3fdf40ba83f6ccafa4507edd69dd5f852793e0d5d3ec947f38812cdcdf301",

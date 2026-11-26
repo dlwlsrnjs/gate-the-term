@@ -1,8 +1,15 @@
 # CGH strict와 pivot 직접학습: 완료 결과와 영어 정보 효과
 
-분석 대상은 2026-11-26 fresh cohort의 **seed 1**입니다. `cgh_strict`와 `pivot_rsft`는 모두 100-step 학습과 최종 평가가 완료됐습니다. 여섯 핵심 조건의 seed 1 전체와 GRPO·split seed 2까지, 총 8회가 완료됐습니다. 전체 수치·진행은 [최신 결과](latest/RESULTS_KO.md)와 [진행 스냅샷](latest/PROGRESS_KO.md), 문항별 기록·출처는 [CSV](latest/completed_items.csv)와 [JSON](latest/completed_results.json)에 있습니다. 이 문서의 해석 범위를 이후 seed에 자동으로 확장하지 않습니다.
+분석 대상은 2026-11-26 fresh cohort의 **seed 1**입니다. `cgh_strict`와 `pivot_rsft`는 모두 100-step 학습과 최종 평가가 완료됐습니다. 이 문서의 seed 1 해석은 여섯 핵심 조건의 seed 1 전체와 GRPO·split seed 2, 총 8회가 완료된 시점을 기준으로 합니다. 전체 수치·진행은 [최신 결과](latest/RESULTS_KO.md)와 [진행 스냅샷](latest/PROGRESS_KO.md), 문항별 기록·출처는 [CSV](latest/completed_items.csv)와 [JSON](latest/completed_results.json)에 있습니다. 이 문서의 해석 범위를 이후 seed에 자동으로 확장하지 않습니다.
 
-**Seed 2 확인:** 아직 최종 평가가 완료되지 않아 seed 간 일관성은 보류합니다. 최신 step과 완료 예상은 [Seed 1·2 확인](latest/SEED_CONSISTENCY_KO.md)에 기록했습니다.
+**Seed 2 추가 관측 (2026-11-26 16:17 KST):** Pivot은 학습·최종 평가 완료, strict는 96/100 step으로 진행 중입니다. 최신 step과 완료 예상, seed별 직접 대조는 [Seed 1·2 확인](latest/SEED_CONSISTENCY_KO.md)에 기록했습니다.
+
+| Pivot 직접학습 | Bengali /60 | Telugu /60 | Thai /60 | 전체 /180 | 같은 seed GRPO 대비 |
+|---|---:|---:|---:|---:|---:|
+| Seed 1 | 21 | 12 | 26 | 59, 32.78% | +2.22 pp |
+| Seed 2 | 21 | 16 | 23 | 60, 33.33% | +2.78 pp |
+
+GRPO 대비 언어별 차이는 seed 1에서 +6/+9/−11개, seed 2에서 +3/+14/−12개입니다. 두 seed 모두 Bengali·Telugu 증가와 Thai 감소가 함께 관측됐습니다. Pivot의 전체 개선은 작고 언어별 상쇄가 큰 경향이 반복됐으나, 두 seed만으로 일반적 안정성이나 우위를 확정하지 않습니다. Seed 2의 pivot−GRPO 조건부 문항 bootstrap 구간은 [−4.44, +10.00] pp입니다. 학습 seed 변동을 포함하지 않습니다. Strict seed 2가 미완료이므로 strict−pivot과 strict−기준선의 재현 여부는 아직 보류합니다. Seed 1 strict와 seed 2 pivot을 직접 대조하지 않습니다.
 
 ## 1. 동일 seed의 성능
 

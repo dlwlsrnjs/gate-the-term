@@ -1,15 +1,15 @@
 {
-  "captured_utc": "2026-11-26T06:59:56+00:00",
+  "captured_utc": "2026-11-26T07:17:00+00:00",
   "training_state": "running",
   "active_jobs": [
     "cgh_strict_s2_n100",
-    "pivot_rsft_s2_n100",
     "cgh_legacy_s2_n100",
     "cgh_strict_nois_s2_n100",
     "vanilla_s3_n100",
     "split_s3_n100",
     "cgh_strict_s3_n100",
-    "pivot_rsft_s3_n100"
+    "pivot_rsft_s3_n100",
+    "cgh_legacy_s3_n100"
   ],
   "completed_this_cohort": [
     "vanilla_s1_n100",
@@ -19,7 +19,8 @@
     "vanilla_s2_n100",
     "split_s2_n100",
     "cgh_legacy_s1_n100",
-    "cgh_strict_s1_n100"
+    "cgh_strict_s1_n100",
+    "pivot_rsft_s2_n100"
   ],
   "source_queue_is_active": true,
   "remote_jobs_assigned": true,
@@ -31,14 +32,14 @@
   },
   "gpu_resources": {
     "0": {
-      "used_mib": 69496,
-      "free_mib": 11595,
-      "utilization": 100
+      "used_mib": 69556,
+      "free_mib": 11535,
+      "utilization": 28
     },
     "1": {
-      "used_mib": 69454,
-      "free_mib": 11637,
-      "utilization": 100
+      "used_mib": 68854,
+      "free_mib": 12237,
+      "utilization": 29
     }
   },
   "allocation": "allocation_2026-11-26.json",
@@ -49,6 +50,6 @@
   "latest_seed_consistency": "results/latest/SEED_CONSISTENCY_KO.md",
   "requested_seed2_completed": {
     "cgh_strict": false,
-    "pivot_rsft": false
+    "pivot_rsft": true
   }
 }

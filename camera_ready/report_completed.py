@@ -124,15 +124,22 @@ def main():
     for tag, record in state["workers"].items():
         log = args.state.parent / (tag + ".log")
         step_rows = []
+        evaluated_languages = []
         if log.exists():
             for line in log.read_text(errors="replace").splitlines():
                 if line.startswith('{"step"'):
                     step_rows.append(json.loads(line))
+                elif line.startswith("evaluated "):
+                    parts = line.split()
+                    if len(parts) == 3 and parts[1] in LANGS and parts[2] == "60":
+                        evaluated_languages.append(parts[1])
         last = step_rows[-1] if step_rows else None
         rate = ((last["elapsed_min"] - step_rows[-11]["elapsed_min"]) / 10) if len(step_rows) >= 11 else None
         if rate is not None:
             rates.append(rate)
         workers.append({"job": tag, "gpu": record["gpu"], "step": last["step"] if last else 0,
+                        "phase": "final_evaluation" if last and last["step"] == 100 else "training",
+                        "evaluated_languages": sorted(set(evaluated_languages)),
                         "recent_minutes_per_step": rate, "last_log_epoch": log.stat().st_mtime if log.exists() else now})
     for run in runs.values():
         tag = run["metrics"]["tag"]
@@ -233,8 +240,10 @@ def main():
              f"로컬: 완료 {len(state['completed'])}/18, 실행 {len(workers)}, 대기 {len(state['pending'])}, 실패 {len(state['failed'])}.",
              f"로컬 마감: {state['deadline']}. 다른 환경 배정은 후순위 학습 9회와 확장 평가 19개 모델입니다.",
              "다른 환경의 실제 실행/완료 상태는 이 서버에서 확인하지 않았습니다.",
-             "", "## 실행 중", "", "| 작업 | GPU | Step / 100 |", "|---|---:|---:|"]
-    lines += [f"| {w['job']} | {w['gpu']} | {w['step']} |" for w in workers]
+             "", "## 실행 중", "", "| 작업 | GPU | Step / 100 | 단계 | 평가 완료 언어 |", "|---|---:|---:|---|---|"]
+    lines += [f"| {w['job']} | {w['gpu']} | {w['step']} | "
+              + ("최종 평가" if w['phase'] == 'final_evaluation' else "학습")
+              + " | " + (", ".join(w['evaluated_languages']) or "—") + " |" for w in workers]
     lines += ["", "## 완료", ""] + [f"- {tag}" for tag in state["completed"]]
     lines += ["", "## 대기 — 아직 로컬 예약", ""] + [f"- {tag}" for tag in state["pending"]]
     lines += ["", "## 추가 원격 이관으로 명시적으로 해제된 작업", ""]

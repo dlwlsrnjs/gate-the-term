@@ -1,5 +1,5 @@
 {
-  "as_of_kst": "2026-11-26T15:59:56+09:00",
+  "as_of_kst": "2026-11-26T16:17:00+09:00",
   "local_deadline": "2026-11-26T22:00:00+09:00",
   "completed_local": [
     "vanilla_s1_n100",
@@ -9,136 +9,145 @@
     "vanilla_s2_n100",
     "split_s2_n100",
     "cgh_legacy_s1_n100",
-    "cgh_strict_s1_n100"
+    "cgh_strict_s1_n100",
+    "pivot_rsft_s2_n100"
   ],
   "active": [
     {
       "job": "cgh_strict_s2_n100",
       "gpu": 0,
-      "step": 86,
-      "recent_minutes_per_step": 1.9001650838057202,
-      "last_log_epoch": 1795676345.8411148
-    },
-    {
-      "job": "pivot_rsft_s2_n100",
-      "gpu": 1,
-      "step": 95,
-      "recent_minutes_per_step": 1.131483096281687,
-      "last_log_epoch": 1795676326.6743767
+      "step": 96,
+      "phase": "training",
+      "evaluated_languages": [],
+      "recent_minutes_per_step": 1.7156115357081092,
+      "last_log_epoch": 1795677375.206991
     },
     {
       "job": "cgh_legacy_s2_n100",
       "gpu": 1,
-      "step": 51,
-      "recent_minutes_per_step": 1.7946439552307125,
-      "last_log_epoch": 1795676325.054613
+      "step": 61,
+      "phase": "training",
+      "evaluated_languages": [],
+      "recent_minutes_per_step": 1.776141406297684,
+      "last_log_epoch": 1795677390.7382905
     },
     {
       "job": "cgh_strict_nois_s2_n100",
       "gpu": 1,
-      "step": 40,
-      "recent_minutes_per_step": 1.780096763769785,
-      "last_log_epoch": 1795676375.4869964
+      "step": 49,
+      "phase": "training",
+      "evaluated_languages": [],
+      "recent_minutes_per_step": 1.74561241944631,
+      "last_log_epoch": 1795677328.287091
     },
     {
       "job": "vanilla_s3_n100",
       "gpu": 0,
-      "step": 39,
-      "recent_minutes_per_step": 1.84481992761294,
-      "last_log_epoch": 1795676384.8967752
+      "step": 48,
+      "phase": "training",
+      "evaluated_languages": [],
+      "recent_minutes_per_step": 1.8336662097771963,
+      "last_log_epoch": 1795677391.40083
     },
     {
       "job": "split_s3_n100",
       "gpu": 1,
-      "step": 38,
-      "recent_minutes_per_step": 1.8271736673514056,
-      "last_log_epoch": 1795676300.752754
+      "step": 48,
+      "phase": "training",
+      "evaluated_languages": [],
+      "recent_minutes_per_step": 1.837328352133433,
+      "last_log_epoch": 1795677403.1486588
     },
     {
       "job": "cgh_strict_s3_n100",
       "gpu": 0,
-      "step": 38,
-      "recent_minutes_per_step": 1.89357834815979,
-      "last_log_epoch": 1795676393.7907255
+      "step": 47,
+      "phase": "training",
+      "evaluated_languages": [],
+      "recent_minutes_per_step": 1.8292748832702628,
+      "last_log_epoch": 1795677370.4695022
     },
     {
       "job": "pivot_rsft_s3_n100",
       "gpu": 0,
-      "step": 38,
-      "recent_minutes_per_step": 1.8456514275074007,
-      "last_log_epoch": 1795676341.5694854
+      "step": 47,
+      "phase": "training",
+      "evaluated_languages": [],
+      "recent_minutes_per_step": 1.8214947883288062,
+      "last_log_epoch": 1795677324.2435048
+    },
+    {
+      "job": "cgh_legacy_s3_n100",
+      "gpu": 1,
+      "step": 0,
+      "phase": "training",
+      "evaluated_languages": [],
+      "recent_minutes_per_step": null,
+      "last_log_epoch": 1795677354.5153995
     }
   ],
   "pending_local": [
-    "cgh_legacy_s3_n100",
     "cgh_strict_nois_s3_n100"
   ],
   "failed": {},
   "remote_fallback_jobs": [],
   "gpu_resources": {
     "0": {
-      "used_mib": 69496,
-      "free_mib": 11595,
-      "utilization": 100
+      "used_mib": 69556,
+      "free_mib": 11535,
+      "utilization": 28
     },
     "1": {
-      "used_mib": 69454,
-      "free_mib": 11637,
-      "utilization": 100
+      "used_mib": 68854,
+      "free_mib": 12237,
+      "utilization": 29
     }
   },
   "forecast": [
     {
       "job": "cgh_strict_s2_n100",
-      "finish_kst": "16:37",
-      "kind": "running"
-    },
-    {
-      "job": "pivot_rsft_s2_n100",
-      "finish_kst": "16:16",
+      "finish_kst": "16:35",
       "kind": "running"
     },
     {
       "job": "cgh_legacy_s2_n100",
-      "finish_kst": "17:38",
+      "finish_kst": "17:37",
       "kind": "running"
     },
     {
       "job": "cgh_strict_nois_s2_n100",
-      "finish_kst": "17:58",
+      "finish_kst": "17:56",
       "kind": "running"
     },
     {
       "job": "vanilla_s3_n100",
-      "finish_kst": "18:04",
-      "kind": "running"
-    },
-    {
-      "job": "split_s3_n100",
       "finish_kst": "18:03",
       "kind": "running"
     },
     {
-      "job": "cgh_strict_s3_n100",
-      "finish_kst": "18:09",
+      "job": "split_s3_n100",
+      "finish_kst": "18:04",
       "kind": "running"
     },
     {
-      "job": "pivot_rsft_s3_n100",
+      "job": "cgh_strict_s3_n100",
       "finish_kst": "18:05",
       "kind": "running"
     },
     {
+      "job": "pivot_rsft_s3_n100",
+      "finish_kst": "18:03",
+      "kind": "running"
+    },
+    {
       "job": "cgh_legacy_s3_n100",
-      "start_kst": "16:16",
-      "finish_kst": "19:34",
-      "kind": "queued",
-      "admitted_before_cutoff_estimate": true
+      "finish_kst": "19:30",
+      "kind": "running"
     },
     {
       "job": "cgh_strict_nois_s3_n100",
-      "start_kst": "16:38",
-      "finish_kst": "19:55",
+      "start_kst": "16:35",
+      "finish_kst": "19:51",
       "kind": "queued",
       "admitted_before_cutoff_estimate": true
     }

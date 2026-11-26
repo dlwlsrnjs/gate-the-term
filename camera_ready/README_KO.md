@@ -1,8 +1,8 @@
 # Camera-ready 추가실험: 설치, 데이터, 서버 인계, 결과 취합
 
-[Seed 1·2 비교 및 완료 여부](results/latest/SEED_CONSISTENCY_KO.md)를 갱신했습니다. Strict·pivot seed 2는 아직 학습 중이며 성능 일관성 판단은 보류합니다.
+[Seed 1·2 비교 및 완료 여부](results/latest/SEED_CONSISTENCY_KO.md)를 갱신했습니다. Pivot seed 2는 60/180으로 최종 평가 완료, strict seed 2는 진행 중입니다. Pivot의 언어별 trade-off는 두 seed에서 같은 방향입니다.
 
-완료된 fresh run의 [잠정 결과](results/latest/RESULTS_KO.md), [진행 스냅샷](results/latest/PROGRESS_KO.md), [리뷰 지적별 해석](results/REVIEWER_INTERPRETATION_KO.md), [CGH·pivot 및 영어 정보 효과 분석](results/CGH_PIVOT_KO.md)을 공개합니다. 핵심 여섯 조건의 seed 1과 GRPO·split seed 2, 총 8회 완료를 확인했습니다. CGH·pivot 직접 비교는 단일 seed이며 세 seed가 모두 끝나지 않은 방법의 평균은 보류합니다.
+완료된 fresh run의 [잠정 결과](results/latest/RESULTS_KO.md), [진행 스냅샷](results/latest/PROGRESS_KO.md), [리뷰 지적별 해석](results/REVIEWER_INTERPRETATION_KO.md), [CGH·pivot 및 영어 정보 효과 분석](results/CGH_PIVOT_KO.md)을 공개합니다. 핵심 여섯 조건의 seed 1과 GRPO·split·pivot seed 2, 총 9회 완료를 확인했습니다. CGH·pivot 직접 비교는 단일 seed이며 세 seed가 모두 끝나지 않은 방법의 평균은 보류합니다.
 
 이 문서가 2026-11 추가실험의 기준입니다. 저장소의 이전 `HANDOFF.md`와 50문제 평가 명령은 이전 rebuttal 기록입니다. 이번에는 **190개 학습 / 60개 MGSM holdout**, 핵심 6조건 × 3 seeds, 새 원문 2,069개에 대한 외부 평가를 사용합니다. 이전 논문의 숫자와 새 실행을 섞어 비교하지 않습니다.
 
@@ -195,3 +195,13 @@ python camera_ready/summarize_expanded.py --root outputs/expanded
 MGSM은 독립적인 원문 60개를 세 언어로 번역한 것이고, 외부 평가는 데이터셋별 원문 1,069개/1,000개입니다. 번역과 seed 반복을 새 독립 문제로 세지 않습니다. seed와 원문 ID를 함께 resample하는 탐색적 crossed bootstrap을 사용하고, 데이터셋·언어별 정확도와 language consistency를 함께 보고합니다. 초기 LoRA hash, engine/계수 hash, 버전, split을 검사하며 빠진 seed를 자동으로 빼지 않습니다.
 
 게재본 반영 방향과 해석 제한은 [PAPER_INTEGRATION.md](PAPER_INTEGRATION.md)에 있습니다. 완료되지 않은 성능 수치는 이 저장소에 넣지 않았습니다.
+
+## 완료 결과와 seed 일관성 재집계
+
+다음 두 명령은 학습을 새로 실행하지 않습니다. 첫 명령은 완료 결과·진행을 같은 시각에 집계하고, 두 번째는 그 스냅샷의 seed 1·2 직접 대조를 생성합니다.
+
+```bash
+python camera_ready/report_completed.py --root /path/to/camera_ready_experiments/runs \
+  --state /path/to/camera_ready_experiments/status.json --output camera_ready/results/latest
+python camera_ready/report_seed_consistency.py
+```
