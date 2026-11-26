@@ -1,12 +1,36 @@
 {
-  "captured_utc": "2026-11-26T02:26:27.353373+00:00",
+  "captured_utc": "2026-11-26T02:46:52.980115+00:00",
   "training_state": "running",
   "active_jobs": [
     "vanilla_s1_n100",
-    "split_s1_n100"
+    "split_s1_n100",
+    "cgh_strict_s1_n100",
+    "pivot_rsft_s1_n100",
+    "cgh_legacy_s1_n100",
+    "cgh_strict_nois_s1_n100",
+    "vanilla_s2_n100",
+    "split_s2_n100"
   ],
   "completed_this_cohort": [],
   "source_queue_is_active": true,
-  "remote_jobs_assigned": false,
-  "note": "Snapshot, not live GitHub status. The original server reserves the entire current queue until a handoff is explicitly performed. Use source_handoff.py before assigning its pending jobs to another server."
+  "remote_jobs_assigned": true,
+  "note": "Snapshot only. Local primary jobs run until 22:00 KST. Remote owns secondary 9 plus external 19. Only live_handoff.json remote_fallback_jobs releases additional local jobs.",
+  "local_deadline": "2026-11-26T22:00:00+09:00",
+  "local_workers_per_gpu": {
+    "0": 4,
+    "1": 4
+  },
+  "gpu_resources": {
+    "0": {
+      "used_mib": 69158,
+      "free_mib": 11933,
+      "utilization": 100
+    },
+    "1": {
+      "used_mib": 69138,
+      "free_mib": 11953,
+      "utilization": 100
+    }
+  },
+  "allocation": "allocation_2026-11-26.json"
 }

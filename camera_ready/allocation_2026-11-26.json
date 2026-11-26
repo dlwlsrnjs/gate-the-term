@@ -1,0 +1,68 @@
+{
+  "date_kst": "2026-11-26",
+  "local_deadline": "2026-11-26T22:00:00+09:00",
+  "local_gpus": [
+    0,
+    1
+  ],
+  "local_workers_per_gpu": 4,
+  "local_training_jobs": [
+    "vanilla_s1_n100",
+    "split_s1_n100",
+    "cgh_strict_s1_n100",
+    "pivot_rsft_s1_n100",
+    "cgh_legacy_s1_n100",
+    "cgh_strict_nois_s1_n100",
+    "vanilla_s2_n100",
+    "split_s2_n100",
+    "cgh_strict_s2_n100",
+    "pivot_rsft_s2_n100",
+    "cgh_legacy_s2_n100",
+    "cgh_strict_nois_s2_n100",
+    "vanilla_s3_n100",
+    "split_s3_n100",
+    "cgh_strict_s3_n100",
+    "pivot_rsft_s3_n100",
+    "cgh_legacy_s3_n100",
+    "cgh_strict_nois_s3_n100"
+  ],
+  "remote_training_jobs": [
+    "whole_gate_s1_n100",
+    "q_resample_s1_n100",
+    "component_zvp_s1_n100",
+    "whole_gate_s2_n100",
+    "q_resample_s2_n100",
+    "component_zvp_s2_n100",
+    "whole_gate_s3_n100",
+    "q_resample_s3_n100",
+    "component_zvp_s3_n100"
+  ],
+  "remote_evaluation_jobs": [
+    "base",
+    "vanilla_s1_n100",
+    "split_s1_n100",
+    "cgh_strict_s1_n100",
+    "pivot_rsft_s1_n100",
+    "cgh_legacy_s1_n100",
+    "cgh_strict_nois_s1_n100",
+    "vanilla_s2_n100",
+    "split_s2_n100",
+    "cgh_strict_s2_n100",
+    "pivot_rsft_s2_n100",
+    "cgh_legacy_s2_n100",
+    "cgh_strict_nois_s2_n100",
+    "vanilla_s3_n100",
+    "split_s3_n100",
+    "cgh_strict_s3_n100",
+    "pivot_rsft_s3_n100",
+    "cgh_legacy_s3_n100",
+    "cgh_strict_nois_s3_n100"
+  ],
+  "notes": [
+    "Local: primary 18 runs only; existing two jobs are adopted without restart.",
+    "Remote: secondary 9 runs plus 19 model evaluations on 4,138 inputs each.",
+    "Local queue stops new jobs when estimated duration plus 25-minute margin cannot finish by 22:00 KST.",
+    "Any local incomplete/unstarted jobs are listed in live_handoff.json for remote restart.",
+    "No changes to training batch size, G, optimizer, normalization, or seed design."
+  ]
+}

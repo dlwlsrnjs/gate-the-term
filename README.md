@@ -1,3 +1,5 @@
+> **오늘 22:00 KST 분담:** [로컬·원격 실행 계획](camera_ready/PLAN_2026-11-26.md) — 현재 서버는 핵심 학습, 다른 환경은 후순위 학습과 확장 평가를 맡습니다.
+
 > **Camera-ready package (2026-11):** 이번 추가실험·확장 평가와 다른 서버 인계는 **[camera_ready/README_KO.md](camera_ready/README_KO.md)** 를 사용하세요. 아래의 2026-09 rebuttal 안내는 이전 프로토콜입니다.
 
 # Gate the Term: 다른 서버에서 추가 대조실험 실행하기

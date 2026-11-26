@@ -11,5 +11,25 @@
   "public_pypi_versions": "all pinned non-Torch package versions found",
   "clean_machine_install": "installation script provided and syntax checked; no second full environment installed in this session",
   "source_handoff_inspection": "passed; source managers were NOT paused",
-  "fresh_full_training_outcomes": "pending; no accuracy claimed"
+  "fresh_full_training_outcomes": "pending; no accuracy claimed",
+  "deadline_parallel_scheduler": {
+    "active_jobs": 8,
+    "adopted_existing_jobs": 2,
+    "new_jobs": 6,
+    "initialization_matches_within_seed": true,
+    "local_deadline": "2026-11-26T22:00:00+09:00",
+    "gpu_resources_snapshot": {
+      "0": {
+        "used_mib": 69158,
+        "free_mib": 11933,
+        "utilization": 100
+      },
+      "1": {
+        "used_mib": 69138,
+        "free_mib": 11953,
+        "utilization": 100
+      }
+    },
+    "remote_fallback_guard": "Rejects all still-reserved local jobs; explicit released-job fixture passed."
+  }
 }

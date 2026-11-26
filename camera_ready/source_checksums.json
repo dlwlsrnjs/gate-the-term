@@ -1,5 +1,5 @@
 {
-  "camera_ready/source_handoff.py": "092a55ecfa2386aac6eca5230bc3e04a1f564ec238c08dffe4111766bc847d06",
+  "camera_ready/source_handoff.py": "48cab5cc26b764f41955bace1e9eb2885cd8d40562f84005f9e73b2b10592d0e",
   "camera_ready/evaluate_expanded.py": "d2cd1702efd74addaff95a878d27ca06ca10e6899da7cee224fb8bc33f309f57",
   "camera_ready/run.py": "4b6793952c17ed32f2c347802c0f53b5c7a371881eda558b7cb2b4395398cac1",
   "camera_ready/prepare.py": "ca409eacfe2382e54a3953970567429379171017b2dc16fb7114cba63c98caa3",
@@ -16,5 +16,8 @@
   "scripts/run_suite.py": "9a9504c9a3078656b09b79ab160fe1ba5e0669e967988a328cbd2c1f079f015c",
   "scripts/setup_camera_ready.sh": "832af70de032c5f6deae04f71ce7bea4f479f572b6c5c2c3023b2d9c8f0bb402",
   "requirements-camera-ready.txt": "4303edd26df3b0abaa21084fe3a3fd5e459c2157c2e2dad07d0c1c973234948a",
-  "camera_ready/protocol.json": "9a5c6c46be10e9734e98aba9b19675b5598cfef96bc82c48228b81d8a9ee4c61"
+  "camera_ready/protocol.json": "9a5c6c46be10e9734e98aba9b19675b5598cfef96bc82c48228b81d8a9ee4c61",
+  "camera_ready/make_fallback_allocation.py": "f1b38ad931a970d1fe31b6e87c996930de28613f83d7473fb173dc40ec1cfe59",
+  "camera_ready/run_parallel.py": "2f3e481cb944ae9e4af2f264d923dc972b000f96f86d3e94c213b5884b9baff2",
+  "camera_ready/allocation_2026-11-26.json": "f009bf9a63bc609c1959c829e70f231f487f15687bff4aa5cadefbffc0d3d182"
 }

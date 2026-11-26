@@ -41,7 +41,7 @@ def main():
     if state["state"] != "running":
         raise RuntimeError("This handoff supports an active training queue; inspect finished results separately")
     expanded = json.loads((root / "expanded_evaluation/status.json").read_text())
-    if expanded["state"] != "waiting_for_training":
+    if expanded["state"] not in ["waiting_for_training", "assigned_remote"]:
         raise RuntimeError("External evaluation is already active/finished; do not use this training-only handoff")
     print("Source active jobs:", [v["job"] for v in state["workers"].values() if v["state"] == "running"])
     if not args.pause_source:
@@ -50,13 +50,16 @@ def main():
     if args.output.exists():
         raise RuntimeError("Assignment output exists; preserve it rather than overwriting")
     # Verify both targets before changing either process. Only manager PIDs are signalled.
-    verify_process(state["pid"], root / "run_suite.py")
-    verify_process(expanded["pid"], root / "run_expanded_evaluation.py")
-    pause(expanded["pid"], root / "run_expanded_evaluation.py")
-    pause(state["pid"], root / "run_suite.py")
+    manager = Path(state.get("manager_script", root / "run_suite.py"))
+    assert manager.name in ["run_suite.py", "run_parallel.py"]
+    verify_process(state["pid"], manager)
+    if expanded["state"] == "waiting_for_training":
+        verify_process(expanded["pid"], root / "run_expanded_evaluation.py")
+        pause(expanded["pid"], root / "run_expanded_evaluation.py")
+    pause(state["pid"], manager)
     state = json.loads((root / "status.json").read_text())
-    jobs = [f"{arm}_s{seed}_n100" for seed in manifest["seeds"]
-            for arm in manifest["primary"] + manifest["secondary"]]
+    jobs = state.get("assigned_jobs") or [f"{arm}_s{seed}_n100" for seed in manifest["seeds"]
+                                          for arm in manifest["primary"] + manifest["secondary"]]
     completed = [job for job in jobs if (root / "runs" / job / "result.json").exists()]
     active = []
     for worker in state["workers"].values():
