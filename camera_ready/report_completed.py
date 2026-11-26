@@ -70,7 +70,10 @@ def main():
                    "by_language": {lg: counts([row for (lang, item), row in rows.items() if lang == lg]) for lg in LANGS},
                    "training_groups": {"n": len(history), "target_degenerate": sum(row["degenerate"] for row in history),
                                        "all_wrong": sum(row["all_wrong"] for row in history),
-                                       "scalar_zero": sum(row["scalar_zero"] for row in history)},
+                                       "scalar_zero": sum(row["scalar_zero"] for row in history),
+                                       "admitted_extras": sum(row["admitted"] for row in history),
+                                       "generated_positive_extras": int(sum(sum(row["extra_target"]) for row in history)),
+                                       "admission_type": "positive-only" if result["arm"] in ["cgh_strict", "cgh_strict_nois", "pivot_rsft"] else "contrast" if result["arm"] == "cgh_legacy" else "none"},
                    "generated_tokens": result["total_generated_tokens"],
                    "prompt_tokens": result["total_prompt_tokens"], "elapsed_s": result["elapsed_s"]}
         runs[result["arm"], result["seed"]] = {"cfg": cfg, "rows": rows, "history": history, "metrics": metrics}
@@ -84,11 +87,18 @@ def main():
         for (lg, item), row in sorted(rows.items()):
             observations.append({"arm": result["arm"], "seed": result["seed"], "language": lg,
                                  "semantic_id": item, **{key: row[key] for key in ["corr", "corr_raw", "lang"]}})
+    arm_order = protocol["primary"] + protocol["secondary"]
+    pairs = [("vanilla", arm) for arm in arm_order if arm != "vanilla"] + [
+        ("split", "cgh_strict"), ("split", "pivot_rsft"),
+        ("pivot_rsft", "cgh_strict"), ("pivot_rsft", "cgh_strict_nois"),
+        ("cgh_strict_nois", "cgh_strict"), ("cgh_legacy", "cgh_strict"),
+        ("q_resample", "cgh_strict"), ("whole_gate", "cgh_strict"), ("component_zvp", "cgh_strict")]
     comparisons = []
-    for (arm, seed), run in sorted(runs.items()):
-        if arm == "vanilla" or ("vanilla", seed) not in runs:
+    for seed, (left, arm) in [(seed, pair) for seed in protocol["seeds"] for pair in pairs]:
+        if (arm, seed) not in runs or (left, seed) not in runs:
             continue
-        baseline = runs["vanilla", seed]
+        run = runs[arm, seed]
+        baseline = runs[left, seed]
         assert all(run["cfg"][key] == baseline["cfg"][key] for key in FIXED)
         assert run["cfg"]["initial_lora_sha256"] == baseline["cfg"]["initial_lora_sha256"]
         assert all([(a["step"], a["batch"], a["lang"], a["i"]) == (b["step"], b["batch"], b["lang"], b["i"])
@@ -103,10 +113,11 @@ def main():
             fixes = [item for item in ids if baseline["rows"][lg, item]["corr"] == 0 and run["rows"][lg, item]["corr"] == 1]
             breaks = [item for item in ids if baseline["rows"][lg, item]["corr"] == 1 and run["rows"][lg, item]["corr"] == 0]
             paired[lg] = {"fixed_ids": fixes, "broken_ids": breaks, "delta_pp": (len(fixes) - len(breaks)) / 60 * 100}
-        comparisons.append({"baseline": "vanilla", "arm": arm, "seed": seed, "delta_pp": float(delta.mean() * 100),
+        delta_pp = (run["metrics"]["overall"]["corr"] - baseline["metrics"]["overall"]["corr"]) / 180 * 100
+        comparisons.append({"baseline": left, "arm": arm, "seed": seed, "delta_pp": delta_pp,
                             "conditional_semantic_cluster_95ci_pp": (np.quantile(bootstrap, [.025, .975]) * 100).tolist(),
                             "bootstrap_replicates": 20000, "bootstrap_rng_seed": 3213,
-                            "scope": "One fixed seed/model pair; selected languages fixed; training-seed uncertainty NOT included.",
+                            "scope": "Exploratory fixed-seed/model pair; selected languages fixed; training-seed uncertainty NOT included; intervals not multiplicity-adjusted.",
                             "paired_by_language": paired})
     state = json.loads(args.state.read_text())
     workers, rates, overhead = [], [], []
@@ -148,7 +159,7 @@ def main():
             forecasts.append({"job": tag, "start_kst": fmt(start), "finish_kst": fmt(finish),
                               "kind": "queued", "admitted_before_cutoff_estimate": admitted})
             heapq.heappush(heap, (finish, gpu))
-    completed_metrics = [runs[key]["metrics"] for key in sorted(runs)]
+    completed_metrics = [runs[key]["metrics"] for key in sorted(runs, key=lambda key: (key[1], arm_order.index(key[0])))]
     report = {"as_of_kst": timestamp, "scope": "PROVISIONAL completed fresh runs only; smoke and historical results excluded.",
               "coverage": "Only result files present in the supplied root. Uncollected other-host runs are unobserved, not failures.",
               "analysis_source_sha256": digest(Path(__file__)), "analysis_numpy_version": np.__version__,
@@ -160,7 +171,7 @@ def main():
     args.output.mkdir(parents=True, exist_ok=True)
     (args.output / "completed_results.json").write_text(json.dumps(report, indent=2) + "\n")
     with (args.output / "completed_items.csv").open("w", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=["arm", "seed", "language", "semantic_id", "corr", "corr_raw", "lang"])
+        writer = csv.DictWriter(handle, fieldnames=["arm", "seed", "language", "semantic_id", "corr", "corr_raw", "lang"], lineterminator="\n")
         writer.writeheader()
         writer.writerows(observations)
     progress = {"as_of_kst": timestamp, "local_deadline": state["deadline"], "completed_local": state["completed"],
@@ -172,6 +183,7 @@ def main():
     (args.output / "progress.json").write_text(json.dumps(progress, indent=2) + "\n")
     lines = ["# 완료 실험 결과 — 잠정 분석", "", f"기준 시각: {timestamp}", "",
              "지정한 결과 폴더에서 확인한 fresh cohort의 완료 run만 포함합니다. 다른 서버 결과가 취합되지 않았다면 그 서버의 완료 여부는 미확인입니다. 단일 seed 관측은 방법의 최종 성능이나 세 seed 평균이 아닙니다.", "",
+             "CGH와 pivot 직접학습의 상세 해석은 [직접 대조 분석](../CGH_PIVOT_KO.md)을 함께 확인합니다.", "",
              "| 조건 | Seed | Bengali | Telugu | Thai | 전체 target 정확도 | Raw 정답 | Script 기준 통과 |",
              "|---|---:|---:|---:|---:|---:|---:|---:|"]
     for m in completed_metrics:
@@ -191,20 +203,26 @@ def main():
         fixed = sum(len(item["fixed_ids"]) for item in paired.values())
         broken = sum(len(item["broken_ids"]) for item in paired.values())
         low, high = comparison["conditional_semantic_cluster_95ci_pp"]
-        lines += [f"- Seed {comparison['seed']}, {comparison['arm']} − GRPO: {comparison['delta_pp']:+.2f} pp; "
+        left_label = "GRPO" if comparison["baseline"] == "vanilla" else comparison["baseline"]
+        lines += [f"- Seed {comparison['seed']}, {comparison['arm']} − {left_label}: {comparison['delta_pp']:+.2f} pp; "
                   f"개선 {fixed}개 / 악화 {broken}개 언어–문항 결과. 원문 ID로 묶은 조건부 95% bootstrap 구간 [{low:+.2f}, {high:+.2f}] pp."]
-    lines += ["", "이 구간은 원문 60개를 resample하며 세 번역을 함께 유지합니다. 한 seed로 고정된 모델의 문항 변동만 반영하고 학습 seed 변동은 반영하지 않습니다. 전체 180개를 독립 문제로 취급하지 않습니다. 구간에 0이 포함된다는 이유로 두 방법의 동등성을 주장하지 않습니다.",
+    lines += ["", "이 탐색적 구간은 원문 60개를 resample하며 세 번역을 함께 유지합니다. 한 seed로 고정된 모델의 문항 변동만 반영하고 학습 seed 변동은 반영하지 않습니다. 다중 비교 보정은 하지 않았습니다. 전체 180개를 독립 문제로 취급하지 않습니다. 구간에 0이 포함된다는 이유로 두 방법의 동등성을 주장하지 않습니다.",
               "", "## 학습 중 성분 퇴화 진단", "",
               "| 조건 / seed | Target 퇴화 그룹 | All-wrong 그룹 | Scalar zero-variance 그룹 |",
               "|---|---:|---:|---:|"]
     for m in completed_metrics:
         t = m["training_groups"]
         lines.append(f"| {m['arm']} / {m['seed']} | {t['target_degenerate']}/{t['n']} | {t['all_wrong']}/{t['n']} | {t['scalar_zero']}/{t['n']} |")
+    lines += ["", "## 추가 생성과 업데이트", "", "| 조건 / seed | 추가 생성 중 positive 수 / 400 | 채택된 extra 수 | 채택 규칙 | Generated tokens |",
+              "|---|---:|---:|---|---:|"]
+    for m in completed_metrics:
+        t = m["training_groups"]
+        lines.append(f"| {m['arm']} / {m['seed']} | {t['generated_positive_extras']}/400 | {t['admitted_extras']} | {t['admission_type']} | {m['generated_tokens']} |")
+    lines += ["", "positive-only 조건의 채택 수는 positive extra 업데이트 수입니다. legacy의 contrast 채택은 같은 의미가 아니므로 직접 동치로 비교하지 않습니다. 같은 생성 개수라도 token/FLOP, 채택 수, gradient 크기는 같지 않습니다. 조건별 policy가 달라지므로 동일 conditioning을 써도 생성 응답은 동일하게 고정되지 않습니다."]
     lines += ["", "이는 각 run의 200개 학습 그룹에 대한 기술 통계입니다. 반복 문제와 변화하는 policy를 포함하므로 독립 표본의 효과 검정으로 읽지 않습니다.",
-              "", "## 첫 완료 비교(seed 1, vanilla/split)의 해석", "",
-              "현재 완료된 seed 1의 split은 GRPO와 target 정답 수가 같습니다. Bengali는 동일하고 Telugu는 2문제 감소, Thai는 2문제 증가했습니다. Raw 정답은 2개 늘었지만 script 기준을 함께 적용한 전체 target 정답 수는 늘지 않았습니다.",
-              "", "정규화 단독 변경의 전체 개선은 이 seed에서 관측되지 않았습니다. 그러나 이것이 정규화 효과가 없다는 증명이나 CGH 개선의 원인이 정규화가 아니라는 입증은 아닙니다. CGH, pivot 직접학습, weighting 및 다른 seed의 비교는 각각 별도의 결과로 판단해야 합니다.",
-              "", "성분 퇴화가 많은데 scalar zero-variance는 없다는 관측은 진단 불일치와 일치합니다. 이는 CGH의 성능 우위나 유일한 필요성을 입증하지 않습니다.",
+              "", "## 해석 범위", "",
+              "성능과 영어 정보 효과의 비교는 [CGH·pivot 직접 대조](../CGH_PIVOT_KO.md), 각 리뷰 지적에 대한 판단은 [리뷰 해석](../REVIEWER_INTERPRETATION_KO.md)에 기록합니다. 이 문서는 완료된 수치를 자동 집계하며, 특정 한 seed의 해석을 이후 완료 결과에 대신 적용하지 않습니다.",
+              "", "성분 퇴화 그룹과 scalar zero-variance 그룹의 빈도 차이는 진단 불일치에 대한 기술 통계입니다. 퇴화율 감소 자체를 repair 성공으로 해석하거나, 정확도 개선으로 population gradient의 복원·unbiasedness를 주장하지 않습니다.",
               "", "새 cohort는 초기화 순서, dropout, sampling과 평가 크기를 맞춰 다시 실행한 비교입니다. 기존 논문의 세 seed 수치와 직접 대조해 개선/악화를 판단하지 않습니다. 아직 세 seed가 끝나지 않은 방법 평균은 JSON에서 null로 남깁니다.",
               "", "## 재현과 출처", "",
               "문항별 수치는 completed_items.csv, paired ID·bootstrap·source SHA256은 completed_results.json에 있습니다. full response와 adapter는 원본 결과 폴더에 보존합니다.",

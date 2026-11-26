@@ -1,6 +1,6 @@
 # Camera-ready 추가실험: 설치, 데이터, 서버 인계, 결과 취합
 
-완료된 fresh run의 [잠정 결과](results/latest/RESULTS_KO.md), [진행 스냅샷](results/latest/PROGRESS_KO.md), [리뷰 지적별 해석](results/REVIEWER_INTERPRETATION_KO.md)을 추가했습니다. 세 seed가 모두 끝나지 않은 방법의 평균은 보류합니다.
+완료된 fresh run의 [잠정 결과](results/latest/RESULTS_KO.md), [진행 스냅샷](results/latest/PROGRESS_KO.md), [리뷰 지적별 해석](results/REVIEWER_INTERPRETATION_KO.md), [CGH·pivot 및 영어 정보 효과 분석](results/CGH_PIVOT_KO.md)을 공개합니다. 핵심 여섯 조건의 seed 1과 GRPO·split seed 2, 총 8회 완료를 확인했습니다. CGH·pivot 직접 비교는 단일 seed이며 세 seed가 모두 끝나지 않은 방법의 평균은 보류합니다.
 
 이 문서가 2026-11 추가실험의 기준입니다. 저장소의 이전 `HANDOFF.md`와 50문제 평가 명령은 이전 rebuttal 기록입니다. 이번에는 **190개 학습 / 60개 MGSM holdout**, 핵심 6조건 × 3 seeds, 새 원문 2,069개에 대한 외부 평가를 사용합니다. 이전 논문의 숫자와 새 실행을 섞어 비교하지 않습니다.
 

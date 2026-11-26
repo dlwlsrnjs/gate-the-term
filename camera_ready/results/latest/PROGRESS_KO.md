@@ -1,8 +1,8 @@
 # 실험 진행 현황
 
-기준 시각: 2026-11-26T14:02:02+09:00
+기준 시각: 2026-11-26T15:31:03+09:00
 
-로컬: 완료 2/18, 실행 8, 대기 8, 실패 0.
+로컬: 완료 8/18, 실행 8, 대기 2, 실패 0.
 로컬 마감: 2026-11-26T22:00:00+09:00. 다른 환경 배정은 후순위 학습 9회와 확장 평가 19개 모델입니다.
 다른 환경의 실제 실행/완료 상태는 이 서버에서 확인하지 않았습니다.
 
@@ -10,28 +10,28 @@
 
 | 작업 | GPU | Step / 100 |
 |---|---:|---:|
-| cgh_strict_s1_n100 | 0 | 79 |
-| pivot_rsft_s1_n100 | 1 | 85 |
-| cgh_legacy_s1_n100 | 0 | 79 |
-| cgh_strict_nois_s1_n100 | 1 | 80 |
-| vanilla_s2_n100 | 0 | 80 |
-| split_s2_n100 | 1 | 79 |
-| cgh_strict_s2_n100 | 0 | 21 |
-| pivot_rsft_s2_n100 | 1 | 18 |
+| cgh_strict_s2_n100 | 0 | 71 |
+| pivot_rsft_s2_n100 | 1 | 73 |
+| cgh_legacy_s2_n100 | 1 | 35 |
+| cgh_strict_nois_s2_n100 | 1 | 23 |
+| vanilla_s3_n100 | 0 | 23 |
+| split_s3_n100 | 1 | 22 |
+| cgh_strict_s3_n100 | 0 | 22 |
+| pivot_rsft_s3_n100 | 0 | 22 |
 
 ## 완료
 
 - vanilla_s1_n100
 - split_s1_n100
+- pivot_rsft_s1_n100
+- cgh_strict_nois_s1_n100
+- vanilla_s2_n100
+- split_s2_n100
+- cgh_legacy_s1_n100
+- cgh_strict_s1_n100
 
 ## 대기 — 아직 로컬 예약
 
-- cgh_legacy_s2_n100
-- cgh_strict_nois_s2_n100
-- vanilla_s3_n100
-- split_s3_n100
-- cgh_strict_s3_n100
-- pivot_rsft_s3_n100
 - cgh_legacy_s3_n100
 - cgh_strict_nois_s3_n100
 
@@ -43,22 +43,16 @@
 
 | 작업 | 구분 | 예상 완료 KST |
 |---|---|---|
-| cgh_strict_s1_n100 | running | 14:50 |
-| pivot_rsft_s1_n100 | running | 14:33 |
-| cgh_legacy_s1_n100 | running | 14:50 |
-| cgh_strict_nois_s1_n100 | running | 14:49 |
-| vanilla_s2_n100 | running | 14:50 |
-| split_s2_n100 | running | 14:52 |
-| cgh_strict_s2_n100 | running | 16:29 |
-| pivot_rsft_s2_n100 | running | 16:45 |
-| cgh_legacy_s2_n100 | queued | 17:44 |
-| cgh_strict_nois_s2_n100 | queued | 18:00 |
-| vanilla_s3_n100 | queued | 18:01 |
-| split_s3_n100 | queued | 18:01 |
-| cgh_strict_s3_n100 | queued | 18:02 |
-| pivot_rsft_s3_n100 | queued | 18:03 |
-| cgh_legacy_s3_n100 | queued | 19:40 |
-| cgh_strict_nois_s3_n100 | queued | 19:56 |
+| cgh_strict_s2_n100 | running | 16:35 |
+| pivot_rsft_s2_n100 | running | 16:21 |
+| cgh_legacy_s2_n100 | running | 17:35 |
+| cgh_strict_nois_s2_n100 | running | 17:53 |
+| vanilla_s3_n100 | running | 17:55 |
+| split_s3_n100 | running | 17:57 |
+| cgh_strict_s3_n100 | running | 18:03 |
+| pivot_rsft_s3_n100 | running | 17:58 |
+| cgh_legacy_s3_n100 | queued | 19:29 |
+| cgh_strict_nois_s3_n100 | queued | 19:43 |
 
 예상은 최근 step 속도와 실제 완료 run의 후처리 시간에 따른 대기열 계산이며 보장 시각이 아닙니다. 18:05 이후 새 run을 시작하지 않고 22시에 이 실험의 로컬 작업을 종료하는 기존 설정을 유지합니다.
 

@@ -1,4 +1,4 @@
-> **완료 결과 업데이트:** [잠정 성능 분석](camera_ready/results/latest/RESULTS_KO.md) · [진행 상황](camera_ready/results/latest/PROGRESS_KO.md) · [리뷰 지적별 의미](camera_ready/results/REVIEWER_INTERPRETATION_KO.md). 단일 seed 결과이며 세 seed 평균은 보류합니다.
+> **완료 결과 업데이트:** 핵심 여섯 조건의 seed 1과 GRPO·split seed 2, 총 8회 완료. [CGH·pivot 및 영어 정보 효과](camera_ready/results/CGH_PIVOT_KO.md) · [전체 잠정 수치](camera_ready/results/latest/RESULTS_KO.md) · [진행 상황](camera_ready/results/latest/PROGRESS_KO.md) · [리뷰 지적별 의미](camera_ready/results/REVIEWER_INTERPRETATION_KO.md). CGH·pivot 직접 비교는 단일 seed이며 세 seed 평균은 보류합니다.
 
 > **오늘 22:00 KST 분담:** [로컬·원격 실행 계획](camera_ready/PLAN_2026-11-26.md) — 현재 서버는 핵심 학습, 다른 환경은 후순위 학습과 확장 평가를 맡습니다.
 
@@ -6,7 +6,7 @@
 
 # Gate the Term: 다른 서버에서 추가 대조실험 실행하기
 
-이 저장소는 제출 논문의 역사적 결과를 그대로 재현하는 코드가 아니라, 동일한 초기화·샘플링 조건에서 reviewer 질문을 확인하는 **새 대조실험 묶음**입니다. 현재 7B smoke 2종만 원래 서버에서 통과했습니다. 이 저장소에 완료된 100-step 성능 결과는 없습니다. 아래 절차로 미완료 실험을 실행하고 결과를 원래 서버로 가져옵니다.
+아래는 초기 rebuttal 인계 절차의 기록입니다. 현재의 추가실험은 [camera-ready 안내](camera_ready/README_KO.md)를 사용합니다. 완료된 100-step 결과와 새 대조실험의 해석은 위 결과 링크에 공개하며, 제출 논문의 역사적 수치와는 별도 cohort로 취급합니다.
 
 ## 1. 서버·환경 준비
 

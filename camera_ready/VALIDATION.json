@@ -1,5 +1,5 @@
 {
-  "checked_utc": "2026-11-26T02:26:27.306877+00:00",
+  "checked_utc": "2026-11-26T06:31:03+00:00",
   "frozen_data_restore": "passed",
   "exact_versions_and_source_checksums": "passed in source environment",
   "data_alignment_and_190_60_split": "passed",
@@ -11,7 +11,7 @@
   "public_pypi_versions": "all pinned non-Torch package versions found",
   "clean_machine_install": "installation script provided and syntax checked; no second full environment installed in this session",
   "source_handoff_inspection": "passed; source managers were NOT paused",
-  "fresh_full_training_outcomes": "Two complete seed-1 controls published provisionally; all three-seed method means withheld.",
+  "fresh_full_training_outcomes": "Eight completed runs: all six primary arms seed 1; vanilla and split seed 2. Three-seed means withheld.",
   "deadline_parallel_scheduler": {
     "active_jobs": 8,
     "adopted_existing_jobs": 2,
@@ -34,15 +34,20 @@
   },
   "completed_result_audit": {
     "passed": true,
-    "complete_runs": 2,
-    "numeric_item_rows": 360,
+    "as_of_kst": "2026-11-26T15:31:03+09:00",
+    "complete_runs": 8,
+    "numeric_item_rows": 1440,
     "semantic_ids": 60,
     "matched_initialization": true,
     "matched_prompt_stream": true,
     "matched_protocol": true,
-    "same_target_correct_count": 55,
-    "paired_fixes": 8,
-    "paired_breaks": 8,
-    "scope": "Single-seed observations; conditional problem-cluster interval only."
+    "per_seed_comparisons": 12,
+    "strict_s1_target": 68,
+    "pivot_rsft_s1_target": 59,
+    "vanilla_s1_target": 55,
+    "split_s1_target": 55,
+    "cgh_strict_nois_s1_target": 72,
+    "all_planned_three_seed_means_withheld": true,
+    "scope": "Exploratory per-seed semantic-cluster intervals; no training-seed uncertainty or multiplicity adjustment. Pure English-content effect not identified."
   }
 }

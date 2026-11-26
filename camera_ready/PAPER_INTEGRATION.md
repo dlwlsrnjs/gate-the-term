@@ -1,6 +1,8 @@
 # Camera-ready integration and claim limits
 
-This package supplies new controlled experiments. Provisional completed-run outcomes are now available in [results/latest/RESULTS_KO.md](results/latest/RESULTS_KO.md), with per-item numeric records and source checksums. At the first published result snapshot, only scalar GRPO and separated normalization, seed 1, had completed on the source host. Full method-level seed means remain withheld until all three planned seeds are present. Source-host smoke/timing outputs remain functionality checks, not additional accuracy results.
+This package supplies new controlled experiments. Provisional completed-run outcomes are now available in [results/latest/RESULTS_KO.md](results/latest/RESULTS_KO.md), with per-item numeric records and source checksums. All six primary arms have completed seed 1; scalar GRPO and separated normalization have also completed seed 2 (eight runs total). The [strict/pivot analysis](results/CGH_PIVOT_KO.md) documents the direct comparisons and English-access limitations. Full method-level seed means remain withheld until all three planned seeds are present. Source-host smoke/timing outputs remain functionality checks, not additional accuracy results.
+
+In seed 1, strict obtains 68/180 versus 55/180 for GRPO and split, 59/180 for pivot RSFT, and 72/180 for unweighted selective updates. Strict’s +5.00 pp versus pivot has a conditional problem-cluster interval of [−2.22, +12.22] pp, excluding training-seed uncertainty and multiplicity adjustment. The strict–pivot gain is concentrated in Thai; pivot is better in Bengali and Telugu. These observations do not establish strict’s superiority over reference distillation, the necessity of weighting, or the pure causal effect of English content.
 
 ## Main claims
 
@@ -16,12 +18,13 @@ The exact sequence-ratio policy-gradient identity is standard and applies to an 
 |---|---|
 | `vanilla` vs `split` | Effect of separated normalization |
 | `split` vs `cgh_strict` | Selective target replacement with fixed original auxiliary coefficients |
-| `cgh_legacy` vs `cgh_strict` | Historical coefficient branches versus strict construction in the same engine |
+| `cgh_legacy` vs `cgh_strict` | Historical coefficient branches versus strict construction in the same engine; several branches differ, so this is not an auxiliary-only ablation |
 | `pivot_rsft` vs `cgh_strict` | Stronger information-access control using correct pivot-assisted responses under the original question |
 | `cgh_strict_nois` vs `cgh_strict` | Contribution of the practical clipped/root weighting |
+| `pivot_rsft` vs `cgh_strict_nois` | Always-positive versus all-wrong-selective extra admission with weight one and the same split original-response update; update counts and resulting trajectories differ |
 | `vanilla` vs `cgh_legacy` | Clean-engine analogue of the historical headline comparison |
 
-These are fresh exploratory experiments. All arms use the same engine and response count, but actual token/FLOP and backward costs differ. An advantage over a weak relative-pivot control alone does not establish that a gate is necessary. If pivot RSFT performs similarly, report that the diagnosis remains useful while the necessity of the specific estimator is unproven.
+These are fresh exploratory experiments. All arms use the same engine and response count, but actual token/FLOP and backward costs differ. Primary arms generate reference-assisted extras under the same conditioning; vanilla and split discard them. They do not replay an identical frozen response pool. A pure English-content effect would require a q-only proposal with the same objective/admission; q_resample changes both proposal and update. Do not decompose the total strict gain into additive English and estimator effects. An advantage over a weak relative-pivot control alone does not establish that a gate is necessary. If pivot RSFT performs similarly, report that the diagnosis remains useful while the necessity of the specific estimator is unproven.
 
 Secondary comparisons test whole-estimator gating, original-question resampling, and component-triggered entropy shaping. Label adaptations accurately; they are not full DAPO/RL-ZVP reproductions.
 
