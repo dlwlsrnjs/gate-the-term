@@ -1,3 +1,5 @@
+> **이전 인계 기록입니다.** 현재 60문제 holdout과 2,069개 새 원문 평가, 실행 중인 큐는 [camera_ready/README_KO.md](camera_ready/README_KO.md) 및 [SOURCE_STATUS.json](camera_ready/SOURCE_STATUS.json)을 따르세요. 아래의 예전 14-run 배정을 재사용하지 마세요.
+
 # 실행 인계 상태 (2026-09-20 KST)
 
 - 원래 서버: real-model diagnostics 12 prompts × 16 draws 완료. 원래 LaTeX 표/PDF에 반영됨.

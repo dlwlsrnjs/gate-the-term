@@ -1,0 +1,20 @@
+{
+  "camera_ready/source_handoff.py": "092a55ecfa2386aac6eca5230bc3e04a1f564ec238c08dffe4111766bc847d06",
+  "camera_ready/evaluate_expanded.py": "d2cd1702efd74addaff95a878d27ca06ca10e6899da7cee224fb8bc33f309f57",
+  "camera_ready/run.py": "4b6793952c17ed32f2c347802c0f53b5c7a371881eda558b7cb2b4395398cac1",
+  "camera_ready/prepare.py": "ca409eacfe2382e54a3953970567429379171017b2dc16fb7114cba63c98caa3",
+  "camera_ready/verify.py": "50ebc3149b877191a9fa5c0e6ec57087b593e73e05857445bd6822b533e3cb5e",
+  "camera_ready/rebuild_evaluation.py": "68fceeccd2f44702a335c4c12edc976e7ffc880e0196aea418835dc7218534f8",
+  "camera_ready/summarize_expanded.py": "5d103683410b5cef456461fe9d5472c2b445123bc50f2ff066e4eaea9c730ba6",
+  "camera_ready/evaluate.py": "c42de09a2e1586dd01a743ce03982322c842d2660ad1d841a4b871f5a764ba8a",
+  "camera_ready/merge_results.py": "6a432006699da1fb055e762b99b3f437d1d7385d24803ce5e14d63973f8906bd",
+  "rebuttal_3213/train_controls.py": "493b69133f2d395b2f9aa7bfe06575ae875a6670445b49e9162b92d150694f68",
+  "rebuttal_3213/control_coefficients.py": "dae3fdf40ba83f6ccafa4507edd69dd5f852793e0d5d3ec947f38812cdcdf301",
+  "rebuttal_3213/summarize_controls.py": "8c2a89438e7414d9e4aad7c17565ca979dc5ebbca922045da4d8bfdef656fd8b",
+  "safecomp_audit/src/mgsm_grpo.py": "fd97a360db191c7f9ac16aff369bcea93f1b0cd2c01c64d74d6489c36ed93a42",
+  "safecomp_audit/src/lang_script.py": "d50d982abcfdfb762027acc0a2446138ca4121325791e8167024ee74ca1e9aa7",
+  "scripts/run_suite.py": "9a9504c9a3078656b09b79ab160fe1ba5e0669e967988a328cbd2c1f079f015c",
+  "scripts/setup_camera_ready.sh": "832af70de032c5f6deae04f71ce7bea4f479f572b6c5c2c3023b2d9c8f0bb402",
+  "requirements-camera-ready.txt": "4303edd26df3b0abaa21084fe3a3fd5e459c2157c2e2dad07d0c1c973234948a",
+  "camera_ready/protocol.json": "9a5c6c46be10e9734e98aba9b19675b5598cfef96bc82c48228b81d8a9ee4c61"
+}

@@ -1,0 +1,100 @@
+[
+  {
+    "package": "numpy",
+    "version": "2.4.6",
+    "available": true,
+    "requires_python": ">=3.11",
+    "url": "https://pypi.org/pypi/numpy/2.4.6/json"
+  },
+  {
+    "package": "scipy",
+    "version": "1.17.1",
+    "available": true,
+    "requires_python": ">=3.11",
+    "url": "https://pypi.org/pypi/scipy/1.17.1/json"
+  },
+  {
+    "package": "transformers",
+    "version": "5.15.1",
+    "available": true,
+    "requires_python": ">=3.10.0",
+    "url": "https://pypi.org/pypi/transformers/5.15.1/json"
+  },
+  {
+    "package": "peft",
+    "version": "0.14.0",
+    "available": true,
+    "requires_python": ">=3.9.0",
+    "url": "https://pypi.org/pypi/peft/0.14.0/json"
+  },
+  {
+    "package": "accelerate",
+    "version": "1.14.0",
+    "available": true,
+    "requires_python": ">=3.10.0",
+    "url": "https://pypi.org/pypi/accelerate/1.14.0/json"
+  },
+  {
+    "package": "huggingface-hub",
+    "version": "1.28.0",
+    "available": true,
+    "requires_python": ">=3.10.0",
+    "url": "https://pypi.org/pypi/huggingface-hub/1.28.0/json"
+  },
+  {
+    "package": "tokenizers",
+    "version": "0.22.2",
+    "available": true,
+    "requires_python": ">=3.9",
+    "url": "https://pypi.org/pypi/tokenizers/0.22.2/json"
+  },
+  {
+    "package": "safetensors",
+    "version": "0.8.0",
+    "available": true,
+    "requires_python": ">=3.10",
+    "url": "https://pypi.org/pypi/safetensors/0.8.0/json"
+  },
+  {
+    "package": "pyarrow",
+    "version": "25.0.1",
+    "available": true,
+    "requires_python": ">=3.10",
+    "url": "https://pypi.org/pypi/pyarrow/25.0.1/json"
+  },
+  {
+    "package": "pandas",
+    "version": "3.0.3",
+    "available": true,
+    "requires_python": ">=3.11",
+    "url": "https://pypi.org/pypi/pandas/3.0.3/json"
+  },
+  {
+    "package": "packaging",
+    "version": "26.2",
+    "available": true,
+    "requires_python": ">=3.8",
+    "url": "https://pypi.org/pypi/packaging/26.2/json"
+  },
+  {
+    "package": "psutil",
+    "version": "7.2.2",
+    "available": true,
+    "requires_python": ">=3.6",
+    "url": "https://pypi.org/pypi/psutil/7.2.2/json"
+  },
+  {
+    "package": "tqdm",
+    "version": "4.69.1",
+    "available": true,
+    "requires_python": ">=3.8",
+    "url": "https://pypi.org/pypi/tqdm/4.69.1/json"
+  },
+  {
+    "package": "sentencepiece",
+    "version": "0.2.2",
+    "available": true,
+    "requires_python": ">=3.9",
+    "url": "https://pypi.org/pypi/sentencepiece/0.2.2/json"
+  }
+]

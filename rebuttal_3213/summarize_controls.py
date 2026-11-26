@@ -30,7 +30,10 @@ rng=np.random.default_rng(3213)
 summary={'seeds':seeds,'distinct_semantic_items':len(ids),'languages':langs,'arms':{},'comparisons':[]}
 for arm in arms:
  summary['arms'][arm]={f:float(np.mean([r[f] for s in seeds for r in data[(arm,s)].values()])) for f in ('corr','corr_raw','lang')}
-for left,right in [('vanilla','split'),('split','cgh_strict'),('pivot_rsft','cgh_strict'),('cgh_strict_nois','cgh_strict'),('q_resample','cgh_strict'),('absolute','cgh_strict'),('whole_gate','cgh_strict'),('component_zvp','cgh_strict'),('primary_reward','cgh_strict'),('dynamic_correctness','cgh_strict'),('split','cgh_noparallel'),('cgh_legacy','cgh_strict')]:
+for arm in arms:
+ summary['arms'][arm]['by_language']={lg:{f:float(np.mean([r[f] for seed in seeds for (l,i),r in data[(arm,seed)].items() if l==lg])) for f in ('corr','corr_raw','lang')} for lg in langs}
+ summary['arms'][arm]['per_seed_accuracy']={str(seed):float(np.mean([r['corr'] for r in data[(arm,seed)].values()])) for seed in seeds}
+for left,right in [('vanilla','cgh_legacy'),('vanilla','cgh_strict'),('vanilla','split'),('split','cgh_strict'),('pivot_rsft','cgh_strict'),('cgh_strict_nois','cgh_strict'),('q_resample','cgh_strict'),('absolute','cgh_strict'),('whole_gate','cgh_strict'),('component_zvp','cgh_strict'),('primary_reward','cgh_strict'),('dynamic_correctness','cgh_strict'),('split','cgh_noparallel'),('cgh_legacy','cgh_strict')]:
  if left not in arms or right not in arms: continue
  delta=np.array([[np.mean([data[(right,s)][(l,i)]['corr']-data[(left,s)][(l,i)]['corr'] for l in langs]) for i in ids] for s in seeds])
  ds=delta.mean(axis=1); nz=ds[np.abs(ds)>1e-12]; samples=[]

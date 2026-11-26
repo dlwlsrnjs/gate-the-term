@@ -36,7 +36,9 @@ for seed in seeds:
    if not (dest/'result.json').exists(): raise SystemExit(f'Incomplete run: {dest}. Archive it outside the output directory before restarting this job. No optimizer/RNG resume is supported.')
    d=json.loads((dest/'result.json').read_text());c=json.loads((dest/'config.json').read_text())
    expected={'arm':arm,'seed':seed,'steps':a.steps,'eval_n':a.eval_n,'model':model,'source_sha256':source,'coefficients_sha256':coeff,'eval_batch':a.eval_batch,'extra':2,'max_new':320,'entropy_alpha':1.}
-   if any(c.get(k)!=v for k,v in expected.items()):raise SystemExit(f'Configuration mismatch: {dest}; use a separate output root')
+   revision='a09a35458c702b33eeacc393d103063234e8bc28'
+   model_matches=(c.get('model')==model or (Path(c.get('model','')).name==revision and Path(model).name==revision))
+   if not model_matches or any(c.get(k)!=v for k,v in expected.items() if k!='model'):raise SystemExit(f'Configuration mismatch: {dest}; use a separate output root')
    if any(d.get(k)!=expected[k] for k in ('arm','seed','steps')) or set(d.get('eval_end',{}))!={'bn','te','th'}:raise SystemExit(f'Invalid result: {dest}')
    if any(len(v['per_problem'])!=a.eval_n for v in d['eval_end'].values()):raise SystemExit(f'Incomplete evaluation: {dest}')
    print('SKIP complete',tag,flush=True);joblock.close();continue

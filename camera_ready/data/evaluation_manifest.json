@@ -1,0 +1,36 @@
+{
+  "indic_gsm8k": {
+    "path": "evaluation_data/indic_gsm8k_bn_te.jsonl",
+    "sha256": "0c9e0135ff1669e6ee8508fcc3493c472ee2ae3c011d8842333c1dcc1f8d9dd7",
+    "distinct_semantic_items": 1069,
+    "language_item_pairs": 2138,
+    "by_language": {
+      "bn": 1069,
+      "te": 1069
+    },
+    "duplicate_language_item_rows_removed": 0
+  },
+  "msvamp": {
+    "path": "evaluation_data/msvamp_bn_th.jsonl",
+    "sha256": "5a1c1b5949a4538025898f031d1e29d0527a3d402d34cdf725ef5bece46179cc",
+    "distinct_semantic_items": 1000,
+    "language_item_pairs": 2000,
+    "by_language": {
+      "bn": 1000,
+      "th": 1000
+    },
+    "duplicate_language_item_rows_removed": 0
+  },
+  "mgsm_source_questions_excluded_from_indic": 250,
+  "overlap_questions_excluded_from_msvamp": 0,
+  "total_distinct_semantic_items": 2069,
+  "total_language_item_pairs": 4138,
+  "limitations": [
+    "External translated benchmarks; translation provenance differs from human-translated MGSM.",
+    "MSVAMP release has no Telugu files; do not report a Telugu result for it.",
+    "Both are arithmetic evaluations; this is not evidence of non-math repair training.",
+    "Normalized exact English overlap is excluded; near duplicates and pretraining contamination remain possible.",
+    "Translations of one source item are clustered for inference; seeds do not add independent questions.",
+    "External test sets are evaluation-only and must not be used for training or hyperparameter selection."
+  ]
+}

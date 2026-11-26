@@ -1,0 +1,60 @@
+{
+  "primary": [
+    "vanilla",
+    "split",
+    "cgh_strict",
+    "pivot_rsft",
+    "cgh_legacy",
+    "cgh_strict_nois"
+  ],
+  "secondary": [
+    "whole_gate",
+    "q_resample",
+    "component_zvp"
+  ],
+  "seeds": [
+    1,
+    2,
+    3
+  ],
+  "steps": 100,
+  "eval_n": 60,
+  "original_rollouts": 4,
+  "extra_rollouts": 2,
+  "prompts_per_step": 2,
+  "max_new_tokens": 320,
+  "eval_batch": 8,
+  "external_eval_batch": 16,
+  "model_id": "Qwen/Qwen2.5-7B-Instruct",
+  "model_revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+  "cohort": "Fresh exploratory camera-ready cohort; do not mix historical runs.",
+  "jobs": [
+    "vanilla_s1_n100",
+    "split_s1_n100",
+    "cgh_strict_s1_n100",
+    "pivot_rsft_s1_n100",
+    "cgh_legacy_s1_n100",
+    "cgh_strict_nois_s1_n100",
+    "whole_gate_s1_n100",
+    "q_resample_s1_n100",
+    "component_zvp_s1_n100",
+    "vanilla_s2_n100",
+    "split_s2_n100",
+    "cgh_strict_s2_n100",
+    "pivot_rsft_s2_n100",
+    "cgh_legacy_s2_n100",
+    "cgh_strict_nois_s2_n100",
+    "whole_gate_s2_n100",
+    "q_resample_s2_n100",
+    "component_zvp_s2_n100",
+    "vanilla_s3_n100",
+    "split_s3_n100",
+    "cgh_strict_s3_n100",
+    "pivot_rsft_s3_n100",
+    "cgh_legacy_s3_n100",
+    "cgh_strict_nois_s3_n100",
+    "whole_gate_s3_n100",
+    "q_resample_s3_n100",
+    "component_zvp_s3_n100"
+  ]
+}

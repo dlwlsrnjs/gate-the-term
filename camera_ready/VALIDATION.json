@@ -1,0 +1,15 @@
+{
+  "checked_utc": "2026-11-26T02:26:27.306877+00:00",
+  "frozen_data_restore": "passed",
+  "exact_versions_and_source_checksums": "passed in source environment",
+  "data_alignment_and_190_60_split": "passed",
+  "control_coefficient_checks": "passed",
+  "primary_dry_run_job_count": 18,
+  "external_dry_run_model_count": 19,
+  "portable_external_smoke_outputs": 8,
+  "portable_external_smoke_status": "passed; excluded from research results",
+  "public_pypi_versions": "all pinned non-Torch package versions found",
+  "clean_machine_install": "installation script provided and syntax checked; no second full environment installed in this session",
+  "source_handoff_inspection": "passed; source managers were NOT paused",
+  "fresh_full_training_outcomes": "pending; no accuracy claimed"
+}

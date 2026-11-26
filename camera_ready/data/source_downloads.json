@@ -1,0 +1,26 @@
+[
+  {
+    "path": "indic_test.parquet",
+    "url": "https://huggingface.co/datasets/ai4bharat/indic-gsm8k/resolve/c6899fb49e5405d5a5e339adebe78895b70e8b42/test.parquet",
+    "bytes": 15587128,
+    "sha256": "71e4759386e6b6ab2c936b0a52cbfb825153f5fc78d0916fb34a232274d656c0"
+  },
+  {
+    "path": "msvamp_English.json",
+    "url": "https://raw.githubusercontent.com/microsoft/MathOctopus/4d385db696c420b212ccf861fcfab13c1499a576/step1_supervised_finetuning/data/msvamp/test_English.json",
+    "bytes": 236601,
+    "sha256": "9431a24e993a8f83fd602393ffbb368e1d91fa36b2110ad8f1e0ec319792eed0"
+  },
+  {
+    "path": "msvamp_Bengali.json",
+    "url": "https://raw.githubusercontent.com/microsoft/MathOctopus/4d385db696c420b212ccf861fcfab13c1499a576/step1_supervised_finetuning/data/msvamp/test_Bengali.json",
+    "bytes": 644605,
+    "sha256": "d1c0bb8e3a93127bdffab516ef9bb739ae5007f9071ae97c447c294b1fd65e82"
+  },
+  {
+    "path": "msvamp_Thai.json",
+    "url": "https://raw.githubusercontent.com/microsoft/MathOctopus/4d385db696c420b212ccf861fcfab13c1499a576/step1_supervised_finetuning/data/msvamp/test_Thai.json",
+    "bytes": 636572,
+    "sha256": "60b81f4458f584f637a35e57e85f503173ef67434a83a449c6ee6670a730e9f8"
+  }
+]

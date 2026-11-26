@@ -9,3 +9,8 @@ rebuttal_3213/diagnostics/
 outputs/
 *.tar.gz
 scripts/model_path.txt
+
+# Camera-ready generated files
+camera_ready/evaluation_data/
+camera_ready/raw_downloads/
+.publish/
