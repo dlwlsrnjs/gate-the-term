@@ -1,5 +1,5 @@
 {
-  "as_of_kst": "2026-11-26T16:17:00+09:00",
+  "as_of_kst": "2026-11-26T16:42:26+09:00",
   "scope": "PROVISIONAL completed fresh runs only; smoke and historical results excluded.",
   "coverage": "Only result files present in the supplied root. Uncollected other-host runs are unobserved, not failures.",
   "analysis_source_sha256": "98a492ab546eea01f16bfbafc2e59a30877dcd7aa2412e023df51e862e8548bd",
@@ -353,6 +353,49 @@
       "generated_tokens": 319382,
       "prompt_tokens": 364942,
       "elapsed_s": 11406.569412231445
+    },
+    {
+      "tag": "cgh_strict_s2_n100",
+      "arm": "cgh_strict",
+      "seed": 2,
+      "overall": {
+        "n": 180,
+        "corr": 68,
+        "corr_raw": 69,
+        "lang": 179
+      },
+      "by_language": {
+        "bn": {
+          "n": 60,
+          "corr": 23,
+          "corr_raw": 23,
+          "lang": 60
+        },
+        "te": {
+          "n": 60,
+          "corr": 3,
+          "corr_raw": 3,
+          "lang": 60
+        },
+        "th": {
+          "n": 60,
+          "corr": 42,
+          "corr_raw": 43,
+          "lang": 59
+        }
+      },
+      "training_groups": {
+        "n": 200,
+        "target_degenerate": 134,
+        "all_wrong": 122,
+        "scalar_zero": 0,
+        "admitted_extras": 40,
+        "generated_positive_extras": 114,
+        "admission_type": "positive-only"
+      },
+      "generated_tokens": 317794,
+      "prompt_tokens": 364942,
+      "elapsed_s": 11398.570452451706
     },
     {
       "tag": "pivot_rsft_s2_n100",
@@ -1247,6 +1290,67 @@
     },
     {
       "baseline": "vanilla",
+      "arm": "cgh_strict",
+      "seed": 2,
+      "delta_pp": 7.222222222222221,
+      "conditional_semantic_cluster_95ci_pp": [
+        2.222222222222222,
+        12.222222222222221
+      ],
+      "bootstrap_replicates": 20000,
+      "bootstrap_rng_seed": 3213,
+      "scope": "Exploratory fixed-seed/model pair; selected languages fixed; training-seed uncertainty NOT included; intervals not multiplicity-adjusted.",
+      "paired_by_language": {
+        "bn": {
+          "fixed_ids": [
+            90,
+            130,
+            149,
+            163,
+            200,
+            212,
+            216
+          ],
+          "broken_ids": [
+            156,
+            229
+          ],
+          "delta_pp": 8.333333333333332
+        },
+        "te": {
+          "fixed_ids": [
+            3,
+            10,
+            194
+          ],
+          "broken_ids": [
+            23,
+            98
+          ],
+          "delta_pp": 1.6666666666666667
+        },
+        "th": {
+          "fixed_ids": [
+            18,
+            35,
+            124,
+            143,
+            181,
+            204,
+            207,
+            227,
+            243
+          ],
+          "broken_ids": [
+            66,
+            84
+          ],
+          "delta_pp": 11.666666666666666
+        }
+      }
+    },
+    {
+      "baseline": "vanilla",
       "arm": "pivot_rsft",
       "seed": 2,
       "delta_pp": 2.7777777777777777,
@@ -1329,6 +1433,63 @@
             216
           ],
           "delta_pp": -20.0
+        }
+      }
+    },
+    {
+      "baseline": "split",
+      "arm": "cgh_strict",
+      "seed": 2,
+      "delta_pp": 7.222222222222221,
+      "conditional_semantic_cluster_95ci_pp": [
+        2.7777777777777777,
+        11.666666666666666
+      ],
+      "bootstrap_replicates": 20000,
+      "bootstrap_rng_seed": 3213,
+      "scope": "Exploratory fixed-seed/model pair; selected languages fixed; training-seed uncertainty NOT included; intervals not multiplicity-adjusted.",
+      "paired_by_language": {
+        "bn": {
+          "fixed_ids": [
+            90,
+            98,
+            130,
+            163,
+            180,
+            200,
+            212,
+            215,
+            216
+          ],
+          "broken_ids": [
+            235
+          ],
+          "delta_pp": 13.333333333333334
+        },
+        "te": {
+          "fixed_ids": [
+            3,
+            10,
+            194
+          ],
+          "broken_ids": [
+            23
+          ],
+          "delta_pp": 3.3333333333333335
+        },
+        "th": {
+          "fixed_ids": [
+            35,
+            124,
+            143,
+            149,
+            207
+          ],
+          "broken_ids": [
+            66,
+            77
+          ],
+          "delta_pp": 5.0
         }
       }
     },
@@ -1419,6 +1580,98 @@
             243
           ],
           "delta_pp": -26.666666666666668
+        }
+      }
+    },
+    {
+      "baseline": "pivot_rsft",
+      "arm": "cgh_strict",
+      "seed": 2,
+      "delta_pp": 4.444444444444445,
+      "conditional_semantic_cluster_95ci_pp": [
+        -3.3333333333333335,
+        12.222222222222223
+      ],
+      "bootstrap_replicates": 20000,
+      "bootstrap_rng_seed": 3213,
+      "scope": "Exploratory fixed-seed/model pair; selected languages fixed; training-seed uncertainty NOT included; intervals not multiplicity-adjusted.",
+      "paired_by_language": {
+        "bn": {
+          "fixed_ids": [
+            24,
+            35,
+            72,
+            98,
+            136,
+            149,
+            163,
+            212
+          ],
+          "broken_ids": [
+            15,
+            52,
+            91,
+            103,
+            133,
+            243
+          ],
+          "delta_pp": 3.3333333333333335
+        },
+        "te": {
+          "fixed_ids": [
+            3,
+            10
+          ],
+          "broken_ids": [
+            23,
+            24,
+            25,
+            55,
+            79,
+            80,
+            84,
+            90,
+            113,
+            120,
+            140,
+            158,
+            180,
+            200,
+            204
+          ],
+          "delta_pp": -21.666666666666668
+        },
+        "th": {
+          "fixed_ids": [
+            18,
+            35,
+            64,
+            72,
+            79,
+            120,
+            124,
+            133,
+            136,
+            140,
+            143,
+            149,
+            158,
+            163,
+            181,
+            204,
+            207,
+            212,
+            215,
+            216,
+            227,
+            243
+          ],
+          "broken_ids": [
+            129,
+            141,
+            228
+          ],
+          "delta_pp": 31.666666666666664
         }
       }
     }
@@ -1986,6 +2239,84 @@
       "result_sha256": "5cead65b0dc715af0a3567624d517fd33451b9e80bd1daada45a27405d8c0924",
       "config_sha256": "6a1bd88f36d84af3f3ae202499ab798db0cebbaf921a4432a6835779de79b67a",
       "train_log_sha256": "1badca6328b9a31772c185f767fb0a5bdec64e319d8ce1130cd26df2139d23f2",
+      "initial_lora_sha256": "dd75bc8b662e2fe07308afebc0b71b3233c827b7fffda0c759824ad215ec258d",
+      "engine_sha256": "493b69133f2d395b2f9aa7bfe06575ae875a6670445b49e9162b92d150694f68",
+      "coefficients_sha256": "dae3fdf40ba83f6ccafa4507edd69dd5f852793e0d5d3ec947f38812cdcdf301",
+      "model_revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+      "versions": {
+        "torch": "2.5.1+cu121",
+        "transformers": "5.15.1",
+        "peft": "0.14.0"
+      },
+      "eval_ids": [
+        181,
+        102,
+        184,
+        23,
+        3,
+        140,
+        15,
+        243,
+        133,
+        113,
+        239,
+        141,
+        52,
+        163,
+        156,
+        80,
+        111,
+        90,
+        215,
+        143,
+        120,
+        84,
+        175,
+        18,
+        186,
+        25,
+        79,
+        37,
+        154,
+        207,
+        180,
+        136,
+        64,
+        204,
+        158,
+        24,
+        193,
+        229,
+        72,
+        35,
+        129,
+        55,
+        228,
+        149,
+        91,
+        122,
+        77,
+        212,
+        200,
+        235,
+        103,
+        124,
+        130,
+        66,
+        10,
+        107,
+        227,
+        194,
+        98,
+        216
+      ],
+      "training_steps": 100
+    },
+    {
+      "tag": "cgh_strict_s2_n100",
+      "result_sha256": "1a2c0dc1b66266a0edd65ecdc8103b21eed4b050f2c03aafb5f6938d5be238ba",
+      "config_sha256": "298ce1f568dcd467e0b4f4a632fdffbfed3c253bc5cc7231b202449dd07242a5",
+      "train_log_sha256": "79cf88db013e839207452adae85c20a332ffa3e890accfba0522c429baca04bf",
       "initial_lora_sha256": "dd75bc8b662e2fe07308afebc0b71b3233c827b7fffda0c759824ad215ec258d",
       "engine_sha256": "493b69133f2d395b2f9aa7bfe06575ae875a6670445b49e9162b92d150694f68",
       "coefficients_sha256": "dae3fdf40ba83f6ccafa4507edd69dd5f852793e0d5d3ec947f38812cdcdf301",

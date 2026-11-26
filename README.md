@@ -1,6 +1,6 @@
-> **Seed 2 확인:** [Seed 1·2 비교 및 완료 여부](camera_ready/results/latest/SEED_CONSISTENCY_KO.md). Pivot seed 2는 60/180으로 최종 평가 완료, strict seed 2는 진행 중입니다. Pivot의 언어별 trade-off는 두 seed에서 같은 방향입니다.
+> **Seed 2 확인:** [Seed 1·2 비교 및 완료 여부](camera_ready/results/latest/SEED_CONSISTENCY_KO.md). Strict·pivot seed 2 모두 최종 평가 완료. Strict는 두 seed 모두 68/180, pivot은 59→60/180입니다. Strict의 기준선 대비 +7.22 pp는 두 seed에서 반복됐습니다.
 
-> **완료 결과 업데이트:** 핵심 여섯 조건의 seed 1과 GRPO·split·pivot seed 2, 총 9회 완료. [CGH·pivot 및 영어 정보 효과](camera_ready/results/CGH_PIVOT_KO.md) · [전체 잠정 수치](camera_ready/results/latest/RESULTS_KO.md) · [진행 상황](camera_ready/results/latest/PROGRESS_KO.md) · [리뷰 지적별 의미](camera_ready/results/REVIEWER_INTERPRETATION_KO.md). CGH·pivot 직접 비교는 단일 seed이며 세 seed 평균은 보류합니다.
+> **완료 결과 업데이트:** 핵심 여섯 조건의 seed 1과 GRPO·split·strict·pivot seed 2, 총 10회 완료. [CGH·pivot 및 영어 정보 효과](camera_ready/results/CGH_PIVOT_KO.md) · [전체 잠정 수치](camera_ready/results/latest/RESULTS_KO.md) · [진행 상황](camera_ready/results/latest/PROGRESS_KO.md) · [리뷰 지적별 의미](camera_ready/results/REVIEWER_INTERPRETATION_KO.md). CGH·pivot 직접 비교는 두 seed이며 세 seed 평균은 보류합니다.
 
 > **오늘 22:00 KST 분담:** [로컬·원격 실행 계획](camera_ready/PLAN_2026-11-26.md) — 현재 서버는 핵심 학습, 다른 환경은 후순위 학습과 확장 평가를 맡습니다.
 
