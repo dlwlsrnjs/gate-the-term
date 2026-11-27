@@ -54,5 +54,11 @@
   },
   "local_completed_kst": "2026-11-26T18:54:51+09:00",
   "gpu_resources_observed_utc": "2026-11-26T09:54:51.843580+00:00",
-  "latest_three_seed_report": "results/latest/THREE_SEED_RESULTS_KO.md"
+  "latest_three_seed_report": "results/latest/THREE_SEED_RESULTS_KO.md",
+  "artifact_release": {
+    "url": "https://huggingface.co/jin-kwon/gate-the-term-camera-ready-20261126",
+    "revision": "63cd7187e29bb27da0bcf238884ed0923c0682cc",
+    "manifest_sha256": "56c7304aae0c9515b33f6869e9de51ff1920b89503583ea5ba0c55d1c972ded3",
+    "public_download_verified": true
+  }
 }

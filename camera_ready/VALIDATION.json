@@ -95,5 +95,23 @@
       }
     },
     "remote_fallback_guard": "Rejects all still-reserved local jobs; explicit released-job fixture passed."
+  },
+  "artifact_handoff": {
+    "public_anonymous_access": true,
+    "all_remote_file_sizes": true,
+    "lfs_sha256_files": 22,
+    "regular_git_blob_sha_files": 257,
+    "manifest_download_sha256": true,
+    "one_full_adapter_anonymous_download_sha256": true,
+    "original_weights_unchanged": true,
+    "published_utc": "2026-11-27T00:21:46.307596+00:00",
+    "repo_id": "jin-kwon/gate-the-term-camera-ready-20261126",
+    "revision": "63cd7187e29bb27da0bcf238884ed0923c0682cc",
+    "manifest_sha256": "56c7304aae0c9515b33f6869e9de51ff1920b89503583ea5ba0c55d1c972ded3",
+    "runs": 18,
+    "files": 279,
+    "payload_bytes": 2917397450,
+    "external_dry_run_models": 19,
+    "secondary_assignment_jobs": 9
   }
 }

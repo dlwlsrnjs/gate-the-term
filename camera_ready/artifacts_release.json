@@ -1,0 +1,28 @@
+{
+  "repo_id": "jin-kwon/gate-the-term-camera-ready-20261126",
+  "repo_type": "model",
+  "revision": "63cd7187e29bb27da0bcf238884ed0923c0682cc",
+  "url": "https://huggingface.co/jin-kwon/gate-the-term-camera-ready-20261126",
+  "manifest_sha256": "56c7304aae0c9515b33f6869e9de51ff1920b89503583ea5ba0c55d1c972ded3",
+  "runs": 18,
+  "manifest_files": 279,
+  "payload_bytes": 2917397450,
+  "adapter_weight_bytes": 2907597456,
+  "base_model": {
+    "repo_id": "Qwen/Qwen2.5-7B-Instruct",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28"
+  },
+  "code_base_commit": "2978b2692aae98c578d37e6aef0f58696fe31170",
+  "verification": {
+    "public_anonymous_access": true,
+    "all_remote_file_sizes": true,
+    "lfs_sha256_files": 22,
+    "regular_git_blob_sha_files": 257,
+    "manifest_download_sha256": true,
+    "one_full_adapter_anonymous_download_sha256": true,
+    "original_weights_unchanged": true
+  },
+  "remaining_training_jobs": 9,
+  "external_evaluation_models": 19,
+  "optimizer_rng_saved": false
+}

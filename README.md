@@ -1,3 +1,5 @@
+> **가중치·전체 결과 인계:** [Hugging Face 다운로드와 최종 실험 실행 순서](camera_ready/ARTIFACT_HANDOFF_KO.md)를 사용하세요. 18개 adapter와 원본 결과·데이터·환경을 검증해서 받을 수 있습니다.
+
 > **로컬 핵심 18회 완료:** 2026-11-26 18:54 KST에 학습·최종 MGSM 평가 완료, 실패 0. [3-seed 평균·언어별 결과](camera_ready/results/latest/THREE_SEED_RESULTS_KO.md) · [진행](camera_ready/results/latest/PROGRESS_KO.md) · [리뷰 해석](camera_ready/results/REVIEWER_INTERPRETATION_KO.md). Strict 37.41%, GRPO 30.56%, pivot 31.85%. 다른 환경 배정인 학습 9회·확장 평가 19개 모델은 별도이며 이 서버에서는 완료 미확인입니다.
 
 > **Camera-ready package:** 설치·데이터·실행·결과 취합은 [camera_ready/README_KO.md](camera_ready/README_KO.md), 분담 기록은 [22시 실행 계획](camera_ready/PLAN_2026-11-26.md)을 사용합니다. 아래 초기 rebuttal 절차는 과거 프로토콜입니다.

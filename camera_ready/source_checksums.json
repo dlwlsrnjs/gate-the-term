@@ -22,5 +22,7 @@
   "camera_ready/allocation_2026-11-26.json": "f009bf9a63bc609c1959c829e70f231f487f15687bff4aa5cadefbffc0d3d182",
   "camera_ready/report_completed.py": "69cd544761c0aaf285aa16d38cb8a5edd41f7cec14e6c49bad2e4b52077faefa",
   "camera_ready/report_seed_consistency.py": "0cf1b76fa629a834a2916dea029b824f7ae59c53a00e7da34f879becec1ef20b",
-  "camera_ready/report_three_seed.py": "80a8ed4ab0a5560acd4363f50eb2c69de72d9d193fe52311c0012601198cf39e"
+  "camera_ready/report_three_seed.py": "80a8ed4ab0a5560acd4363f50eb2c69de72d9d193fe52311c0012601198cf39e",
+  "camera_ready/artifacts.py": "6002f10f78e4f124b6dba69f63806893f573331d7cc18b65f4acdb63c386dd0d",
+  "camera_ready/artifacts_release.json": "621cfa1ea379d221625fd6a62fa3be77cd7db629b5034ee4a85bb98f35dde3fd"
 }

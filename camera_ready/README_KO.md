@@ -1,5 +1,7 @@
 # Camera-ready 추가실험: 설치, 데이터, 서버 인계, 결과 취합
 
+**가중치와 원본 결과를 다른 서버로 옮길 때:** [ARTIFACT_HANDOFF_KO.md](ARTIFACT_HANDOFF_KO.md)의 다운로드·검증·후속 실행 명령을 사용합니다.
+
 **로컬 핵심 18회가 2026-11-26 18:54 KST에 학습·최종 MGSM 평가까지 완료됐습니다.** 실패는 없습니다. [3-seed 결과](results/latest/THREE_SEED_RESULTS_KO.md), [전체 per-seed 수치](results/latest/RESULTS_KO.md), [진행](results/latest/PROGRESS_KO.md), [리뷰 해석](results/REVIEWER_INTERPRETATION_KO.md), [영어 정보 효과 분석](results/CGH_PIVOT_KO.md)을 확인합니다. 원격 후순위 학습 9회·확장 평가 19개 모델의 결과는 아직 여기서 취합·검증하지 않았습니다.
 
 이 문서가 2026-11 추가실험의 기준입니다. 저장소의 이전 `HANDOFF.md`와 50문제 평가 명령은 이전 rebuttal 기록입니다. 이번에는 **190개 학습 / 60개 MGSM holdout**, 핵심 6조건 × 3 seeds, 새 원문 2,069개에 대한 외부 평가를 사용합니다. 이전 논문의 숫자와 새 실행을 섞어 비교하지 않습니다.
