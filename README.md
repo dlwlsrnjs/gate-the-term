@@ -1,6 +1,6 @@
 > **가중치·전체 결과 인계:** [Hugging Face 다운로드와 최종 실험 실행 순서](camera_ready/ARTIFACT_HANDOFF_KO.md)를 사용하세요. 18개 adapter와 원본 결과·데이터·환경을 검증해서 받을 수 있습니다.
 
-> **로컬 핵심 18회 완료:** 2026-11-26 18:54 KST에 학습·최종 MGSM 평가 완료, 실패 0. [3-seed 평균·언어별 결과](camera_ready/results/latest/THREE_SEED_RESULTS_KO.md) · [진행](camera_ready/results/latest/PROGRESS_KO.md) · [리뷰 해석](camera_ready/results/REVIEWER_INTERPRETATION_KO.md). Strict 37.41%, GRPO 30.56%, pivot 31.85%. 다른 환경 배정인 학습 9회·확장 평가 19개 모델은 별도이며 이 서버에서는 완료 미확인입니다.
+> **전체 camera-ready 실행 완료:** 2026-11-27 12:04 KST에 primary 18회·secondary 9회 학습과 19개 모델 외부 평가를 모두 검증했습니다. [최종 상세 결과](camera_ready/results/final_2026-11-27/RESULTS_KO.md) · [외부 평가 요약 JSON](camera_ready/results/final_2026-11-27/external_summary.json) · [원시 예측 HF artifact](https://huggingface.co/jin-kwon/gate-the-term-camera-ready-20261126/tree/fb5bc2061369faed0ea464566ccb89b706788d1c/expanded-evaluation-20261127). Strict−split은 Indic-GSM8K +5.61 pp, MSVAMP +3.92 pp였습니다.
 
 > **Camera-ready package:** 설치·데이터·실행·결과 취합은 [camera_ready/README_KO.md](camera_ready/README_KO.md), 분담 기록은 [22시 실행 계획](camera_ready/PLAN_2026-11-26.md)을 사용합니다. 아래 초기 rebuttal 절차는 과거 프로토콜입니다.
 

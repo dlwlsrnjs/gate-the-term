@@ -1,0 +1,31 @@
+{
+  "complete": true,
+  "functionality_smoke": false,
+  "by_dataset_language": {
+    "indic_gsm8k/bn": {
+      "n": 1069,
+      "corr": 0.264733395696913,
+      "corr_raw": 0.264733395696913,
+      "lang": 1.0
+    },
+    "indic_gsm8k/te": {
+      "n": 1069,
+      "corr": 0.10477081384471469,
+      "corr_raw": 0.10477081384471469,
+      "lang": 1.0
+    },
+    "msvamp/bn": {
+      "n": 1000,
+      "corr": 0.531,
+      "corr_raw": 0.531,
+      "lang": 1.0
+    },
+    "msvamp/th": {
+      "n": 1000,
+      "corr": 0.634,
+      "corr_raw": 0.634,
+      "lang": 1.0
+    }
+  },
+  "elapsed_s": 1619.7026584148407
+}
