@@ -1,0 +1,20 @@
+{
+  "repo_id": "jin-kwon/gate-the-term-camera-ready-20261126",
+  "repo_type": "model",
+  "revision": "fb5bc2061369faed0ea464566ccb89b706788d1c",
+  "path": "expanded-evaluation-20261127",
+  "url": "https://huggingface.co/jin-kwon/gate-the-term-camera-ready-20261126/tree/fb5bc2061369faed0ea464566ccb89b706788d1c/expanded-evaluation-20261127",
+  "files": 61,
+  "payload_bytes": 64062613,
+  "checksums_manifest_sha256": "09aad27b9900dd866fb361373b88f25e45feb7322aa8ded0261000596cd57540",
+  "evaluations": 19,
+  "predictions_per_evaluation": 4138,
+  "completed_kst": "2026-11-27T12:04:09+09:00",
+  "verification": {
+    "remote_file_count": true,
+    "remote_payload_bytes": true,
+    "summary_present": true,
+    "checksums_present": true,
+    "representative_predictions_present": true
+  }
+}

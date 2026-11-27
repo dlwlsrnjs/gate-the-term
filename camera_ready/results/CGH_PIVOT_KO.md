@@ -1,6 +1,6 @@
 # CGH·pivot: 3-seed 완료 결과와 영어 정보 효과
 
-로컬 핵심 6조건 × 3 seeds의 18회 학습·최종 MGSM 평가가 모두 완료됐습니다. 평균·언어별 수치는 [3-seed 결과](latest/THREE_SEED_RESULTS_KO.md), per-seed·출처는 [전체 결과](latest/RESULTS_KO.md), 상태는 [진행](latest/PROGRESS_KO.md)에 있습니다. 다른 환경의 학습 9회와 외부 19개 모델 평가 결과는 포함하지 않았습니다.
+핵심 6조건 × 3 seeds의 18회 학습·fresh MGSM 평가와 외부 19개 모델 평가가 모두 완료됐습니다. 이 문서는 fresh MGSM 중심 분석이며, 외부 Indic-GSM8K·MSVAMP 결과와 최종 결론은 [최종 상세 결과](final_2026-11-27/RESULTS_KO.md)에 있습니다.
 
 ## 전체 성능과 직접 대조
 
@@ -55,4 +55,4 @@ Pivot−GRPO는 세 seed에서 Bengali +6/+3/+2개, Telugu +9/+14/+11개, Thai �
 
 > Across three matched seeds, strict CGH reached 37.41% language-gated accuracy versus 30.56% for scalar GRPO and 28.89% for separated normalization. Reference-assisted positive distillation reached 31.85%, with Telugu gains and Thai losses in every seed. The strict–distillation difference remained uncertain under a crossed seed/problem bootstrap, while unweighted selective updates reached 38.89%. These exploratory results support evaluating selective updates separately from reference access, without establishing the necessity of weighting or isolating a pure English-content effect.
 
-Exact identity는 이상적 unfiltered sequence-ratio 항에 한정하고 실제 clipped/root·mean-token 구현은 biased surrogate로 명시합니다. 정확도 개선은 unbiasedness나 exact gradient 복원을 입증하지 않습니다. 한 base model·100 steps·원문 60개 holdout이라는 제한과 외부 평가 미취합 상태를 유지합니다.
+Exact identity는 이상적 unfiltered sequence-ratio 항에 한정하고 실제 clipped/root·mean-token 구현은 biased surrogate로 명시합니다. 정확도 개선은 unbiasedness나 exact gradient 복원을 입증하지 않습니다. 외부 2,069개 semantic IDs에서도 strict−split 개선은 반복됐지만, 한 base model·100 steps·산술 도메인이라는 제한은 유지합니다.

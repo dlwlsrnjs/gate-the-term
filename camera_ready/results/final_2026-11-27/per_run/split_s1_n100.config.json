@@ -1,0 +1,19 @@
+{
+  "batch_size": 16,
+  "limit_items": null,
+  "model_revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+  "max_new_tokens": 320,
+  "do_sample": false,
+  "repetition_penalty": 1.0,
+  "torch": "2.5.1+cu121",
+  "transformers": "5.15.1",
+  "peft": "0.14.0",
+  "adapter_sha256": {
+    "adapter_model.safetensors": "96bb4927ada9521b5bad833416739ba8e6909f750bd6382c0e26a9c19eccddef"
+  },
+  "dataset_manifest_sha256": "4f8ec84c8c21335443021b2677f5161a4e34da4aee484e4914de90fb4bdd82cd",
+  "source_sha256": "d2cd1702efd74addaff95a878d27ca06ca10e6899da7cee224fb8bc33f309f57",
+  "scoring_sha256": "fd97a360db191c7f9ac16aff369bcea93f1b0cd2c01c64d74d6489c36ed93a42",
+  "is_functionality_smoke": false,
+  "tag": "split_s1_n100"
+}
